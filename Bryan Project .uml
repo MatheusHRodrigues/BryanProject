@@ -3,58 +3,43 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="182.0" y="149.0">org.academiadecodigo.bootcamp.bryanproject.world.objects.WorldObjects</node>
-    <node x="29.0" y="77.0">org.academiadecodigo.bootcamp.bryanproject.entity.player.Player</node>
-    <node x="0.0" y="298.0">org.academiadecodigo.bootcamp.bryanproject.animation.Animation</node>
-    <node x="224.0" y="77.0">org.academiadecodigo.bootcamp.bryanproject.entity.npc.PeppaPig</node>
-    <node x="137.0" y="77.0">org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC</node>
-    <node x="28.0" y="149.0">org.academiadecodigo.bootcamp.bryanproject.world.World</node>
-    <node x="0.0" y="226.0">org.academiadecodigo.bootcamp.bryanproject.world.PeppaPigWorld</node>
-    <node x="0.0" y="0.0">org.academiadecodigo.bootcamp.bryanproject.entity.Playable</node>
-    <node x="126.5" y="0.0">org.academiadecodigo.bootcamp.bryanproject.entity.Entity</node>
-    <node x="154.0" y="298.0">org.academiadecodigo.bootcamp.bryanproject.game.Game</node>
+    <node x="355.0" y="349.0">org.academiadecodigo.bootcamp.bryanproject.world.objects.WorldObjects</node>
+    <node x="15.0" y="255.0">org.academiadecodigo.bootcamp.bryanproject.entity.player.Player</node>
+    <node x="0.0" y="533.0">org.academiadecodigo.bootcamp.bryanproject.animation.Animation</node>
+    <node x="179.0" y="255.0">org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC</node>
+    <node x="196.0" y="349.0">org.academiadecodigo.bootcamp.bryanproject.world.World</node>
+    <node x="0.0" y="89.0">org.academiadecodigo.bootcamp.bryanproject.entity.Playable</node>
+    <node x="140.0" y="0.0">org.academiadecodigo.bootcamp.bryanproject.entity.Entity</node>
+    <node x="-200.0" y="347.0">org.academiadecodigo.bootcamp.bryanproject.game.Game</node>
   </nodes>
   <notes />
   <edges>
     <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.player.Player" target="org.academiadecodigo.bootcamp.bryanproject.entity.Playable">
-      <point x="-22.0" y="-13.5" />
+      <point x="-36.0" y="-24.5" />
       <point x="0.0" y="13.5" />
     </edge>
     <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.player.Player" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
-      <point x="22.0" y="-13.5" />
-      <point x="95.0" y="52.0" />
-      <point x="141.16666666666666" y="52.0" />
-      <point x="-29.333333333333343" y="13.5" />
-    </edge>
-    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.PeppaPigWorld" target="org.academiadecodigo.bootcamp.bryanproject.world.World">
-      <point x="0.0" y="-13.5" />
-      <point x="0.0" y="13.5" />
+      <point x="36.0" y="-24.5" />
+      <point x="123.0" y="230.0" />
+      <point x="175.5" y="230.0" />
+      <point x="-35.5" y="102.5" />
     </edge>
     <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
-      <point x="0.0" y="-13.5" />
-      <point x="0.0" y="13.5" />
-    </edge>
-    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.npc.PeppaPig" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
-      <point x="0.0" y="-13.5" />
-      <point x="275.0" y="52.0" />
-      <point x="199.83333333333331" y="52.0" />
-      <point x="29.333333333333314" y="13.5" />
+      <point x="0.0" y="-24.5" />
+      <point x="35.5" y="102.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="163.0" y="162.5" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="163.0" y="294.5" />
   <SelectedNodes>
-    <node>org.academiadecodigo.bootcamp.bryanproject.world.World</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.world.objects.WorldObjects</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.player.Player</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.animation.Animation</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.world.PeppaPigWorld</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.npc.PeppaPig</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.Playable</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.Entity</node>
     <node>org.academiadecodigo.bootcamp.bryanproject.game.Game</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC</node>
   </SelectedNodes>
-  <Categories />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>
