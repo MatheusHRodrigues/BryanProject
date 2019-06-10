@@ -1,17 +1,16 @@
 package org.academiadecodigo.bootcamp.bryanproject.world;
 
 public class Map {
-    private String bgLocation;
+    private String backgroudPath;
     private Ground ground;
 
-
-    protected Map(String bgLocation, Ground ground) {
-        this.bgLocation = bgLocation;
+    protected Map(String backgroudPath, Ground ground) {
+        this.backgroudPath = backgroudPath;
         this.ground = ground;
     }
 
-    public String getBgLocation() {
-        return bgLocation;
+    public String getBackgroudPath() {
+        return backgroudPath;
     }
 
     public Ground getGround() {

@@ -4,28 +4,37 @@ import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public abstract class Entity {
-    private int health;
-    private int maxHealth;
-    private int strength;
+    private HealthManage healthManage;
     private EntityPosition position;
-    private int size;
     private Picture graphicsRep;
+    private int strength;
+    private int size;
 
-    public Entity(int health, int maxHealth, int strength) {
-        this.health = health;
-        this.maxHealth = maxHealth;
+    public Entity(int health, int healthScale, int strength) {
+        healthManage = new HealthManage(health, healthScale);
         this.strength = strength;
     }
 
-    public void spawn(int x, int y, int size, Ground ground, Picture picture) {
-        this.position = new EntityPosition(x, y, ground);
-        this.graphicsRep = picture;
+    public void spawn(int x, int y, int size, Ground ground) {
+        this.position = new EntityPosition(x, y, ground,size);
         this.size = size;
+        graphicsRep.translate(x ,y);
         graphicsRep.grow(size, size);
         graphicsRep.draw();
     }
 
+    public void addGraphicsRepresentation(Entitys entity) {
+        graphicsRep = new Picture(0, 0,
+                "Game/Animations/Entity/" + entity.getName() + "/" + entity.getName().toLowerCase() + "-idle-00.png");
+    }
+
+
     public int getSize() {
         return size;
     }
+
+    public void hit(int damage) {
+        healthManage.tryMakeDamage(damage);
+    }
+
 }

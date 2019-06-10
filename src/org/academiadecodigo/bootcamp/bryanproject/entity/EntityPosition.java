@@ -7,8 +7,9 @@ public class EntityPosition extends Position {
 
     private Ground ground;
 
-    public EntityPosition(int x, int y, Ground ground) {
-        super(x, y);
+    public EntityPosition(int x, int y, Ground ground,int size) {
+        super(x, y, x - size, y + size);
         this.ground = ground;
     }
+
 }
