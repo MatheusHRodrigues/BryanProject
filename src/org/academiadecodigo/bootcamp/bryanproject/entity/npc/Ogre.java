@@ -2,14 +2,14 @@ package org.academiadecodigo.bootcamp.bryanproject.entity.npc;
 
 
 import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
-import org.academiadecodigo.bootcamp.bryanproject.entity.Entitys;
+import org.academiadecodigo.bootcamp.bryanproject.entity.EntityType;
 import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
 
 public class Ogre extends Entity {
 
     public Ogre(int health, int maxHealth, int strength) {
-        super(health, maxHealth, strength);
-        super.addGraphicsRepresentation(Entitys.OGRE);
+        super(health, maxHealth, strength,EntityType.OGRE);
+        super.addGraphicsRepresentation();
 
     }
 

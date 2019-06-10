@@ -1,5 +1,7 @@
 package org.academiadecodigo.bootcamp.bryanproject.entity;
 
+import org.academiadecodigo.bootcamp.bryanproject.animation.Animation;
+import org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType;
 import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -7,10 +9,13 @@ public abstract class Entity {
     private HealthManage healthManage;
     private EntityPosition position;
     private Picture graphicsRep;
+    private Animation animation;
+    private EntityType entityType;
     private int strength;
     private int size;
 
-    public Entity(int health, int healthScale, int strength) {
+    public Entity(int health, int healthScale, int strength,EntityType entityType) {
+        this.entityType = entityType;
         healthManage = new HealthManage(health, healthScale);
         this.strength = strength;
     }
@@ -21,11 +26,16 @@ public abstract class Entity {
         graphicsRep.translate(x ,y);
         graphicsRep.grow(size, size);
         graphicsRep.draw();
+        animation = new Animation();
     }
 
-    public void addGraphicsRepresentation(Entitys entity) {
+    public EntityType getEntityType() {
+        return entityType;
+    }
+
+    public void addGraphicsRepresentation() {
         graphicsRep = new Picture(0, 0,
-                "Game/Animations/Entity/" + entity.getName() + "/" + entity.getName().toLowerCase() + "-idle-00.png");
+                "Game/Animations/Entity/" + entityType.getName() + "/" + entityType.getName().toLowerCase() + "-idle-00.png");
     }
 
     public int getSize() {
@@ -36,12 +46,32 @@ public abstract class Entity {
         healthManage.tryMakeDamage(damage);
     }
 
+    public Picture getGraphicsRep() {
+        return graphicsRep;
+    }
+
+    public Animation getAnimation() {
+        return animation;
+    }
+
+    public void setGraphicsRep(Picture graphicsRep) {
+        this.graphicsRep = graphicsRep;
+    }
+
     public void moveForward(int distance) {
+        int oldX = position.getX();
+        int oldY = position.getY();
         position.moveRight(distance);
+        graphicsRep.translate( oldX + position.getX(), oldY - position.getY() );
+        animation.runAnimation(this, AnimationType.RUN);
     }
 
     public void moveBackwards(int distance) {
+        int oldX = position.getX();
+        int oldY = position.getY();
         position.moveLeft(distance);
+        graphicsRep.translate( oldX + position.getX(), oldY - position.getY() );
+        animation.runAnimation(this, AnimationType.RUN);
     }
 
 

@@ -23,7 +23,7 @@ public class Game {
         grid.draw();
     }
 
-    public void init() {
+    public void init() throws InterruptedException {
         Picture picture = new Picture(grid.getX(), grid.getY(), worlds.get(0).getMap().getBackgroudPath());
         picture.draw();
         Entity bryan = new Player(100, 100, 10);
@@ -36,6 +36,16 @@ public class Game {
                 picture.getHeight() - worlds.get(0).getMap().getGround().getHeight(),
                 80,
                 worlds.get(0).getMap().getGround());
+        int delay = 2000;
+        for (int i = 0; i < 10; i++) {
+            Thread.sleep(delay);
+            bryan.moveForward(1);
+            Thread.sleep(10);
+            bryan.moveForward(1);
+            Thread.sleep(300);
+            bryan.moveBackwards(1);
+            Thread.sleep(300);
+        }
 
     }
 
