@@ -37,8 +37,11 @@ public class Game {
                 80,
                 worlds.get(0).getMap().getGround());
         int delay = 200;
+
+        bryan.jump();
         for (int i = 0; i < 80; i++) {
 
+            bryan.jump();
             bryan.moveForward(10);
             ogre.moveBackwards(10);
             Thread.sleep(delay);

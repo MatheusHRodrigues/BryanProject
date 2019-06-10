@@ -14,11 +14,11 @@ public class EntityPosition extends Position {
     }
 
     public void moveUp(int distance) {
-        super.setY( distance - super.getY() );
+        super.setY(super.getY() + distance  );
     }
 
     public void moveDown(int distance) {
-        super.setY(super.getY() + distance);
+        super.setY(super.getY() - distance);
     }
 
     public void moveRight(int distance) {

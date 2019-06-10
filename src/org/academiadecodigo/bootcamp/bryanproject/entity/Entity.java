@@ -5,6 +5,8 @@ import org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType;
 import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
+import java.util.Timer;
+
 public abstract class Entity {
     private HealthManage healthManage;
     private EntityPosition position;
@@ -71,6 +73,18 @@ public abstract class Entity {
         graphicsRep.translate( oldX - position.getX(), 0 );
         animation.runAnimation(this, AnimationType.RUN);
 
+    }
+
+    public void jump() throws InterruptedException {
+        int oldY = position.getY();
+        position.moveUp(graphicsRep.getHeight());
+        graphicsRep.translate(0,oldY - position.getY());
+        animation.runAnimation(this, AnimationType.JUMP);
+                Thread.sleep(30);
+        oldY = position.getY();
+        position.moveDown(graphicsRep.getHeight());
+        graphicsRep.translate(0,oldY - position.getY());
+        animation.runAnimation(this, AnimationType.RUN);
     }
 
 
