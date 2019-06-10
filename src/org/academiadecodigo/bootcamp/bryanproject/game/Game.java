@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.bryanproject.game;
 
+import org.academiadecodigo.bootcamp.bryanproject.entity.player.Player;
 import org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld;
 import org.academiadecodigo.bootcamp.bryanproject.world.World;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
@@ -21,9 +22,13 @@ public class Game {
     }
 
     public void init() {
-        Picture picture = new Picture(PADDING, PADDING, worlds.get(0).getMap().getBgLocation());
+        Picture picture = new Picture(grid.getX(), grid.getY(), worlds.get(0).getMap().getBgLocation());
         picture.draw();
-    }
+        Player bryan = new Player(100, 100, 10);
+        bryan.spawn(picture.getWidth() - worlds.get(0).getMap().getGround().getWidth(),
+                picture.getHeight() - worlds.get(0).getMap().getGround().getHeight(),
+                40, worlds.get(0).getMap().getGround());
 
+    }
 
 }

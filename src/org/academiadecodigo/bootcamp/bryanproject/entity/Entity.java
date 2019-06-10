@@ -1,12 +1,15 @@
 package org.academiadecodigo.bootcamp.bryanproject.entity;
 
-import org.academiadecodigo.bootcamp.bryanproject.world.Position;
+import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public abstract class Entity {
     private int health;
     private int maxHealth;
     private int strength;
-    private Position position;
+    private EntityPosition position;
+    private int size;
+    private Picture graphicsRep;
 
     public Entity(int health, int maxHealth, int strength) {
         this.health = health;
@@ -14,16 +17,15 @@ public abstract class Entity {
         this.strength = strength;
     }
 
-    public void jump() {
-
+    public void spawn(int x, int y, int size, Ground ground, Picture picture) {
+        this.position = new EntityPosition(x, y, ground);
+        this.graphicsRep = picture;
+        this.size = size;
+        graphicsRep.grow(size, size);
+        graphicsRep.draw();
     }
 
-    public void moveLeft() {
-
+    public int getSize() {
+        return size;
     }
-
-    public void moveRight() {
-
-    }
-
 }
