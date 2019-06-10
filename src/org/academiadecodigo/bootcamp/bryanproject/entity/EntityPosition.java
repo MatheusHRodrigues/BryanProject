@@ -22,11 +22,12 @@ public class EntityPosition extends Position {
     }
 
     public void moveRight(int distance) {
-        super.setX(super.getX() + distance );
+        super.setX(super.getX() - distance);
+
     }
 
     public void moveLeft(int distance) {
-        super.setX(distance - super.getX());
+        super.setX(super.getX() + distance);
     }
 
     public Ground getGround() {

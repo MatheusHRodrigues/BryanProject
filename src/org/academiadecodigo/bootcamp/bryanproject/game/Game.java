@@ -36,16 +36,25 @@ public class Game {
                 picture.getHeight() - worlds.get(0).getMap().getGround().getHeight(),
                 80,
                 worlds.get(0).getMap().getGround());
-        int delay = 2000;
-        for (int i = 0; i < 10; i++) {
+        int delay = 200;
+        for (int i = 0; i < 80; i++) {
+
+            bryan.moveForward(10);
+            ogre.moveBackwards(10);
             Thread.sleep(delay);
-            bryan.moveForward(1);
-            Thread.sleep(10);
-            bryan.moveForward(1);
-            Thread.sleep(300);
-            bryan.moveBackwards(1);
-            Thread.sleep(300);
+
+
         }
+
+        for (int i = 0; i < 80; i++) {
+
+            bryan.moveBackwards(10);
+            ogre.moveForward(10);
+            Thread.sleep(delay);
+
+
+        }
+
 
     }
 

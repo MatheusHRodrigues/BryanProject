@@ -60,18 +60,17 @@ public abstract class Entity {
 
     public void moveForward(int distance) {
         int oldX = position.getX();
-        int oldY = position.getY();
         position.moveRight(distance);
-        graphicsRep.translate( oldX + position.getX(), oldY - position.getY() );
+        graphicsRep.translate( oldX - position.getX(), 0);
         animation.runAnimation(this, AnimationType.RUN);
     }
 
     public void moveBackwards(int distance) {
         int oldX = position.getX();
-        int oldY = position.getY();
         position.moveLeft(distance);
-        graphicsRep.translate( oldX + position.getX(), oldY - position.getY() );
+        graphicsRep.translate( oldX - position.getX(), 0 );
         animation.runAnimation(this, AnimationType.RUN);
+
     }
 
 
