@@ -28,7 +28,6 @@ public abstract class Entity {
                 "Game/Animations/Entity/" + entity.getName() + "/" + entity.getName().toLowerCase() + "-idle-00.png");
     }
 
-
     public int getSize() {
         return size;
     }
@@ -36,5 +35,14 @@ public abstract class Entity {
     public void hit(int damage) {
         healthManage.tryMakeDamage(damage);
     }
+
+    public void moveForward(int distance) {
+        position.moveRight(distance);
+    }
+
+    public void moveBackwards(int distance) {
+        position.moveLeft(distance);
+    }
+
 
 }
