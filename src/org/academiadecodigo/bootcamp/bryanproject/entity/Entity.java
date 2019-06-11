@@ -63,14 +63,14 @@ public abstract class Entity {
     public void moveForward(int distance) {
         int oldX = position.getX();
         position.moveRight(distance);
-        graphicsRep.translate( oldX - position.getX(), 0);
+        graphicsRep.translate( position.getX() - oldX, 0);
         animation.runAnimation(this, AnimationType.RUN);
     }
 
     public void moveBackwards(int distance) {
         int oldX = position.getX();
         position.moveLeft(distance);
-        graphicsRep.translate( oldX - position.getX(), 0 );
+        graphicsRep.translate(position.getX() - oldX, 0 );
         animation.runAnimation(this, AnimationType.RUN);
 
     }
@@ -78,12 +78,12 @@ public abstract class Entity {
     public void jump() throws InterruptedException {
         int oldY = position.getY();
         position.moveUp(graphicsRep.getHeight());
-        graphicsRep.translate(0,oldY - position.getY());
+        graphicsRep.translate(0,position.getY() - oldY);
         animation.runAnimation(this, AnimationType.JUMP);
                 Thread.sleep(30);
         oldY = position.getY();
         position.moveDown(graphicsRep.getHeight());
-        graphicsRep.translate(0,oldY - position.getY());
+        graphicsRep.translate(0,position.getY() - oldY);
         animation.runAnimation(this, AnimationType.RUN);
     }
 

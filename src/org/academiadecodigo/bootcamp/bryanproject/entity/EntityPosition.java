@@ -9,25 +9,25 @@ public class EntityPosition extends Position {
 
 
     public EntityPosition(int x, int y, Ground ground,int size) {
-        super(x, y, x - size, y + size);
+        super(x, y, y - size, x + size);
         this.ground = ground;
     }
 
     public void moveUp(int distance) {
-        super.setY(super.getY() + distance  );
+        super.setY(super.getY() - distance  );
     }
 
     public void moveDown(int distance) {
-        super.setY(super.getY() - distance);
+        super.setY(super.getY() + distance);
     }
 
     public void moveRight(int distance) {
-        super.setX(super.getX() - distance);
+        super.setX(super.getX() + distance);
 
     }
 
     public void moveLeft(int distance) {
-        super.setX(super.getX() + distance);
+        super.setX(super.getX() - distance);
     }
 
     public Ground getGround() {
