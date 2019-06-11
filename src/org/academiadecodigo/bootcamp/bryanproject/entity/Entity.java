@@ -1,8 +1,8 @@
 package org.academiadecodigo.bootcamp.bryanproject.entity;
 
 import org.academiadecodigo.bootcamp.bryanproject.animation.Animation;
-import org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType;
 import org.academiadecodigo.bootcamp.bryanproject.animation.AnimationDirection;
+import org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType;
 import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -65,7 +65,7 @@ public abstract class Entity {
         if (oldX + distance <= position.getGround().getWidth() - size * 2) {
             position.moveRight(distance);
             graphicsRep.translate(position.getX() - oldX, 0);
-            animation.runAnimation(this, AnimationType.RUN, AnimationDirection.RIGHT);
+            animation.runAnimation(this, AnimationType.WALK, AnimationDirection.RIGHT);
         }
     }
 
@@ -74,7 +74,7 @@ public abstract class Entity {
         if((oldX - distance) >= 10) {
             position.moveLeft(distance);
             graphicsRep.translate(position.getX() - oldX, 0);
-            animation.runAnimation(this, AnimationType.RUN, AnimationDirection.LEFT);
+            animation.runAnimation(this, AnimationType.WALK, AnimationDirection.LEFT);
         }
     }
 

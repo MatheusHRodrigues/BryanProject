@@ -8,15 +8,15 @@ public class Animation {
     private String path = "Game/Animations/";
     private String fileConcat = "-";
     private String tag = "{}";
-    //file exemple bryan-walk-00.png
 
     public void runAnimation(Entity entity, AnimationType type) {
-        String load = path + "Entity/" + entity.getEntityType().getName() + "/" + entity.getEntityType().getName().toLowerCase() + fileConcat + "walk" + fileConcat + tag + ".png";
+        String load = path + "Entity/" + entity.getEntityType().getName() + "/" + entity.getEntityType().getName().toLowerCase() + fileConcat + type.toString().toLowerCase()  + fileConcat + tag + ".png";
         run(entity,type,load);
     }
 
     public void runAnimation(Entity entity, AnimationType type, AnimationDirection animationDirection) {
-        String load = path + "Entity/" + entity.getEntityType().getName() + "/" + entity.getEntityType().getName().toLowerCase() + fileConcat + "walk" + fileConcat + animationDirection.toString().toLowerCase() + fileConcat + tag + ".png";
+        String load = path + "Entity/" + entity.getEntityType().getName() + "/" + entity.getEntityType().getName().toLowerCase() + fileConcat + type.toString().toLowerCase() + fileConcat + animationDirection.toString().toLowerCase() + fileConcat + tag + ".png";
+        System.out.println(load);
         run(entity,type,load);
 
     }
@@ -26,7 +26,9 @@ public class Animation {
             frame++;
             currentType = type;
             if (frame <= 4) {
-                entity.getGraphicsRep().load(load.replace("{}",new Integer(frame).toString()));
+                load = load.replace("{}", new Integer(frame).toString());
+                System.out.println(load);
+                entity.getGraphicsRep().load(load);
             } else {
                 frame = -1;
             }
