@@ -1,8 +1,8 @@
 package org.academiadecodigo.bootcamp.bryanproject.game;
 
+import org.academiadecodigo.bootcamp.bryanproject.entity.Bryan;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
 import org.academiadecodigo.bootcamp.bryanproject.entity.npc.Ogre;
-import org.academiadecodigo.bootcamp.bryanproject.entity.player.Player;
 import org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld;
 import org.academiadecodigo.bootcamp.bryanproject.world.World;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
@@ -26,7 +26,7 @@ public class Game {
     public void init() throws InterruptedException {
         Picture picture = new Picture(grid.getX(), grid.getY(), worlds.get(0).getMap().getBackgroudPath());
         picture.draw();
-        Entity bryan = new Player(100, 100, 10);
+        Entity bryan = new Bryan(100, 100, 10);
         bryan.spawn(picture.getWidth() - worlds.get(0).getMap().getGround().getWidth(),
                 picture.getHeight() - worlds.get(0).getMap().getGround().getHeight(),
                 40, worlds.get(0).getMap().getGround());
@@ -37,11 +37,10 @@ public class Game {
                 80,
                 worlds.get(0).getMap().getGround());
         int delay = 200;
-
-        bryan.jump();
+       /* bryan.jump();
         for (int i = 0; i < 80; i++) {
 
-            bryan.jump();
+            //bryan.jump();
             bryan.moveForward(10);
             ogre.moveBackwards(10);
             Thread.sleep(delay);
@@ -56,7 +55,7 @@ public class Game {
             Thread.sleep(delay);
 
 
-        }
+        }*/
 
 
     }

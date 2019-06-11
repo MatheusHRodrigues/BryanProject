@@ -1,19 +1,39 @@
 package org.academiadecodigo.bootcamp.bryanproject.entity.player;
 
 import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
-import org.academiadecodigo.bootcamp.bryanproject.entity.EntityType;
-import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
+import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
-public class Player extends Entity implements Playable {
 
-    public Player(int health, int maxHealth, int strength) {
-        super(health, maxHealth, strength,EntityType.BRYAN);
-        super.addGraphicsRepresentation();
+public final class Player implements KeyboardHandler {
+
+    Keyboard keyboard;
+    Entity entity;
+
+    public Player(Entity entity) {
+        keyboard = new Keyboard(this);
+        KeyboardFactory.create(keyboard);
+        this.entity = entity;
     }
 
+    @Override
+    public void keyPressed(KeyboardEvent keyboardEvent) {
+        switch (keyboardEvent.getKey()) {
+            case KeyboardEvent.KEY_RIGHT:
+                entity.moveForward(10);
+                break;
+            case KeyboardEvent.KEY_LEFT:
+                entity.moveBackwards(10);
+                break;
+            case KeyboardEvent.KEY_UP:
+                entity.jump();
+                break;
+        }
+    }
 
     @Override
-    public void spawn(int x, int y, int size, Ground ground) {
-        super.spawn(x + size, y - size, size, ground);
+    public void keyReleased(KeyboardEvent keyboardEvent) {
+
     }
 }
