@@ -2,6 +2,7 @@ package org.academiadecodigo.bootcamp.bryanproject.entity;
 
 import org.academiadecodigo.bootcamp.bryanproject.animation.Animation;
 import org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType;
+import org.academiadecodigo.bootcamp.bryanproject.game.Game;
 import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -62,17 +63,21 @@ public abstract class Entity {
 
     public void moveForward(int distance) {
         int oldX = position.getX();
-        position.moveRight(distance);
-        graphicsRep.translate( position.getX() - oldX, 0);
-        animation.runAnimation(this, AnimationType.RUN);
+
+        if (oldX + distance <= position.getGround().getWidth() - size * 2) {
+            position.moveRight(distance);
+            graphicsRep.translate(position.getX() - oldX, 0);
+            animation.runAnimation(this, AnimationType.RUN);
+        }
     }
 
     public void moveBackwards(int distance) {
         int oldX = position.getX();
-        position.moveLeft(distance);
-        graphicsRep.translate(position.getX() - oldX, 0 );
-        animation.runAnimation(this, AnimationType.RUN);
-
+        if((oldX - distance) >= 10) {
+            position.moveLeft(distance);
+            graphicsRep.translate(position.getX() - oldX, 0);
+            animation.runAnimation(this, AnimationType.RUN);
+        }
     }
 
     public void jump() throws InterruptedException {
@@ -80,11 +85,12 @@ public abstract class Entity {
         position.moveUp(graphicsRep.getHeight());
         graphicsRep.translate(0,position.getY() - oldY);
         animation.runAnimation(this, AnimationType.JUMP);
-                Thread.sleep(30);
+                Thread.sleep(300);
         oldY = position.getY();
         position.moveDown(graphicsRep.getHeight());
         graphicsRep.translate(0,position.getY() - oldY);
         animation.runAnimation(this, AnimationType.RUN);
+        Thread.sleep(300);
     }
 
 

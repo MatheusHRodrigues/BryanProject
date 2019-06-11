@@ -38,22 +38,24 @@ public class Game {
                 worlds.get(0).getMap().getGround());
         int delay = 200;
 
-        bryan.jump();
+
         for (int i = 0; i < 80; i++) {
 
             bryan.jump();
             bryan.moveForward(10);
+            ogre.jump();
             ogre.moveBackwards(10);
             Thread.sleep(delay);
 
 
         }
 
-        for (int i = 0; i < 80; i++) {
+        for (int i = 0; i < 8000; i++) {
 
-            bryan.moveBackwards(10);
-            ogre.moveForward(10);
-            Thread.sleep(delay);
+
+            //bryan.moveBackwards(10);
+            //bryan.moveForward(10);
+            //Thread.sleep(delay);
 
 
         }
