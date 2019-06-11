@@ -2,11 +2,9 @@ package org.academiadecodigo.bootcamp.bryanproject.entity;
 
 import org.academiadecodigo.bootcamp.bryanproject.animation.Animation;
 import org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType;
-import org.academiadecodigo.bootcamp.bryanproject.game.Game;
+import org.academiadecodigo.bootcamp.bryanproject.animation.AnimationDirection;
 import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
-
-import java.util.Timer;
 
 public abstract class Entity {
     private HealthManage healthManage;
@@ -67,7 +65,7 @@ public abstract class Entity {
         if (oldX + distance <= position.getGround().getWidth() - size * 2) {
             position.moveRight(distance);
             graphicsRep.translate(position.getX() - oldX, 0);
-            animation.runAnimation(this, AnimationType.RUN);
+            animation.runAnimation(this, AnimationType.RUN, AnimationDirection.RIGHT);
         }
     }
 
@@ -76,7 +74,7 @@ public abstract class Entity {
         if((oldX - distance) >= 10) {
             position.moveLeft(distance);
             graphicsRep.translate(position.getX() - oldX, 0);
-            animation.runAnimation(this, AnimationType.RUN);
+            animation.runAnimation(this, AnimationType.RUN, AnimationDirection.LEFT);
         }
     }
 
