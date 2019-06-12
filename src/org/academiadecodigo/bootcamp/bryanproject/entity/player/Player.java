@@ -27,11 +27,12 @@ public final class Player implements KeyboardHandler {
                 entity.moveBackwards(10);
                 break;
             case KeyboardEvent.KEY_UP:
-                try {
-                    entity.jump();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        entity.jump();
+                    }
+                }).start();
                 break;
         }
     }

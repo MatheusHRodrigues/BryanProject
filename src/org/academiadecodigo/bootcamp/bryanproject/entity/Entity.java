@@ -36,7 +36,7 @@ public abstract class Entity {
 
     public void addGraphicsRepresentation() {
         graphicsRep = new Picture(0, 0,
-                "Game/Animations/Entity/" + entityType.getName() + "/" + entityType.getName().toLowerCase() + "-idle-00.png");
+                "Game/Animations/Entity/" + entityType.getName() + "/" + entityType.getName().toLowerCase() + "-idle-0.png");
     }
 
     public int getSize() {
@@ -78,17 +78,20 @@ public abstract class Entity {
         }
     }
 
-    public void jump() throws InterruptedException {
+    public void jump(){
         int oldY = position.getY();
         position.moveUp(graphicsRep.getHeight());
         graphicsRep.translate(0,position.getY() - oldY);
         animation.runAnimation(this, AnimationType.JUMP);
-                Thread.sleep(300);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         oldY = position.getY();
         position.moveDown(graphicsRep.getHeight());
         graphicsRep.translate(0,position.getY() - oldY);
-        animation.runAnimation(this, AnimationType.RUN);
-        Thread.sleep(300);
+        animation.runAnimation(this, AnimationType.IDLE);
     }
 
 

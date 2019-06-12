@@ -3,7 +3,6 @@ package org.academiadecodigo.bootcamp.bryanproject.game;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Bryan;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
 import org.academiadecodigo.bootcamp.bryanproject.entity.npc.Ogre;
-import org.academiadecodigo.bootcamp.bryanproject.entity.player.Player;
 import org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld;
 import org.academiadecodigo.bootcamp.bryanproject.world.World;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
@@ -37,6 +36,12 @@ public class Game {
                 picture.getHeight() - worlds.get(0).getMap().getGround().getHeight(),
                 80,
                 worlds.get(0).getMap().getGround());
+
+
+        for (int i = 0; i < 100; i++) {
+            //bryan.jump();
+        }
+
     }
 
 }

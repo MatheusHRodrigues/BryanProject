@@ -16,7 +16,6 @@ public class Animation {
 
     public void runAnimation(Entity entity, AnimationType type, AnimationDirection animationDirection) {
         String load = path + "Entity/" + entity.getEntityType().getName() + "/" + entity.getEntityType().getName().toLowerCase() + fileConcat + type.toString().toLowerCase() + fileConcat + animationDirection.toString().toLowerCase() + fileConcat + tag + ".png";
-        System.out.println(load);
         run(entity,type,load);
 
     }
@@ -27,7 +26,6 @@ public class Animation {
             currentType = type;
             if (frame <= 4) {
                 load = load.replace("{}", new Integer(frame).toString());
-                System.out.println(load);
                 entity.getGraphicsRep().load(load);
             } else {
                 frame = -1;
