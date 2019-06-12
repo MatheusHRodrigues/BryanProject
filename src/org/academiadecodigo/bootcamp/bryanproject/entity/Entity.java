@@ -14,6 +14,7 @@ public abstract class Entity {
     private EntityType entityType;
     private int strength;
     private int size;
+    private boolean jumping;
 
     public Entity(int health, int healthScale, int strength,EntityType entityType) {
         this.entityType = entityType;
@@ -79,19 +80,23 @@ public abstract class Entity {
     }
 
     public void jump(){
-        int oldY = position.getY();
-        position.moveUp(graphicsRep.getHeight());
-        graphicsRep.translate(0,position.getY() - oldY);
-        animation.runAnimation(this, AnimationType.JUMP);
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if (!jumping) {
+            jumping = true;
+            int oldY = position.getY();
+            position.moveUp(graphicsRep.getHeight());
+            graphicsRep.translate(0,position.getY() - oldY);
+            animation.runAnimation(this, AnimationType.JUMP);
+            try {
+                Thread.sleep(300);
+                jumping = false;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            oldY = position.getY();
+            position.moveDown(graphicsRep.getHeight());
+            graphicsRep.translate(0,position.getY() - oldY);
+            animation.runAnimation(this, AnimationType.IDLE);
         }
-        oldY = position.getY();
-        position.moveDown(graphicsRep.getHeight());
-        graphicsRep.translate(0,position.getY() - oldY);
-        animation.runAnimation(this, AnimationType.IDLE);
     }
 
 
