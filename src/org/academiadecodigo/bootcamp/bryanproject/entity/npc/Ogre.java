@@ -13,7 +13,6 @@ public class Ogre extends Entity {
     public Ogre(int health, int maxHealth, int strength) {
         super(health, maxHealth, strength,EntityType.OGRE);
         player = new Player(this);
-        super.addGraphicsRepresentation();
 
     }
 

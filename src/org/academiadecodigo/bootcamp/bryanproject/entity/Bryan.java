@@ -9,7 +9,6 @@ public class Bryan extends Entity {
 
     public Bryan(int health, int maxHealth, int strength) {
         super(health, maxHealth, strength,EntityType.BRYAN);
-        super.addGraphicsRepresentation();
     }
 
 
