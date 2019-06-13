@@ -7,6 +7,6 @@ public abstract class NPC extends Entity {
 
 
     public NPC(int health, int healthScale, int strength, EntityType entityType) {
-        super(health, healthScale, strength, entityType);
+        super(health, healthScale, entityType);
     }
 }

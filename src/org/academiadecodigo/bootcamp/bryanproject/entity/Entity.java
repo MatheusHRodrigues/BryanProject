@@ -10,18 +10,16 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public abstract class Entity {
     private HealthManage healthManage;
     private EntityPosition position;
-    private Picture graphicsRep; //TODO class to hitbox and image
+    private Picture graphicsRep; 
     private Rectangle hitbox;
     private Animation animation;
-    private EntityType entityType;
-    private int strength;
-    private int size;
     private boolean jumping;
+    private int size;
+    private EntityType entityType;
 
-    public Entity(int health, int healthScale, int strength,EntityType entityType) {
+    public Entity(int health, int healthScale,EntityType entityType) {
         this.entityType = entityType;
         healthManage = new HealthManage(health, healthScale);
-        this.strength = strength;
     }
 
     public void spawn(int x, int y, int size, Ground ground) {
@@ -54,24 +52,8 @@ public abstract class Entity {
         animation = new Animation();
     }
 
-    public int getSize() {
-        return size;
-    }
-
-    public void hit(int damage) {
-        healthManage.tryMakeDamage(damage);
-    }
-
     public Picture getGraphicsRep() {
         return graphicsRep;
-    }
-
-    public Animation getAnimation() {
-        return animation;
-    }
-
-    public void setGraphicsRep(Picture graphicsRep) {
-        this.graphicsRep = graphicsRep;
     }
 
     public void moveForward(int distance) {
@@ -104,7 +86,7 @@ public abstract class Entity {
             hitbox.translate(0,position.getY() - oldY);
             animation.runAnimation(this, AnimationType.JUMP);
             try {
-                Thread.sleep(300);
+                Thread.sleep(180);
                 jumping = false;
             } catch (InterruptedException e) {
                 e.printStackTrace();

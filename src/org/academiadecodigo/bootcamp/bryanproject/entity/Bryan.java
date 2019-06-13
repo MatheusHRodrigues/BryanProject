@@ -7,8 +7,8 @@ public class Bryan extends Entity {
 
     Player player;
 
-    public Bryan(int health, int maxHealth, int strength) {
-        super(health, maxHealth, strength,EntityType.BRYAN);
+    public Bryan(int health, int maxHealth) {
+        super(health, maxHealth,EntityType.BRYAN);
     }
 
 

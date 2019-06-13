@@ -10,8 +10,8 @@ public class Ogre extends Entity {
 
     Player player;
 
-    public Ogre(int health, int maxHealth, int strength) {
-        super(health, maxHealth, strength,EntityType.OGRE);
+    public Ogre(int health, int maxHealth) {
+        super(health, maxHealth,EntityType.OGRE);
         player = new Player(this);
 
     }
