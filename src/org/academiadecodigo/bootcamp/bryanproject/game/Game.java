@@ -13,13 +13,11 @@ public class Game {
     private final int PADDING = 10;
     private Rectangle grid;
     private List<World> worlds = new ArrayList<>();
-    public static HashMap<World, List<Entity>> worldListHashMap = new HashMap<>();
 
 
     public Game() {
         OgreWorld ogreWorld = new OgreWorld(this);
         worlds.add(ogreWorld);
-        worldListHashMap.put(ogreWorld,new ArrayList<Entity>());
         grid = new Rectangle(PADDING, PADDING, 928, 793);
         grid.draw();
     }

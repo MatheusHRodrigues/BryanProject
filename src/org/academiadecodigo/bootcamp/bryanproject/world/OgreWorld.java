@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.bryanproject.world;
 
+import org.academiadecodigo.bootcamp.bryanproject.Music.Sound;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Bryan;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
 import org.academiadecodigo.bootcamp.bryanproject.entity.npc.Ogre;
@@ -22,6 +23,7 @@ public class OgreWorld extends World {
     public void init() {
         super.addPicture(new Picture(super.getGame().getGrid().getX(),super.getGame().getGrid().getY(), super.getMap().getBackgroudPath()));
         super.getPicture().draw();
+        Sound.music();
         generateEntitys();
         for (Entity entity : entities) {
             if (entity instanceof Bryan) {
