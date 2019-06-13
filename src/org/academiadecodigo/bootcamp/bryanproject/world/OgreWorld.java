@@ -7,36 +7,43 @@ import org.academiadecodigo.bootcamp.bryanproject.game.Game;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class OgreWorld extends World {
 
-    ArrayList<Entity> worldEntity;
+    private List<Entity> entities = new ArrayList<>();
 
     public OgreWorld(Game game) {
         super(new Map("resources/Game/OgreWorld/map/Background.png", new Ground(928, 85)),game);
-        worldEntity = new ArrayList<>();
-        worldEntity.add(new Bryan(100, 100));
-        worldEntity.add(new Ogre(100, 100));
     }
 
 
     public void init() {
-        Picture picture = new Picture(getGame().getGrid().getX(), getGame().getGrid().getY(),getMap().getBackgroudPath());
-        picture.draw();
-
-
-        for (Entity entity : worldEntity) {
+        super.addPicture(new Picture(super.getGame().getGrid().getX(),super.getGame().getGrid().getY(), super.getMap().getBackgroudPath()));
+        super.getPicture().draw();
+        generateEntitys();
+        for (Entity entity : entities) {
             if (entity instanceof Bryan) {
-                entity.spawn(picture.getWidth() - getMap().getGround().getWidth(),
-                        picture.getHeight() - getMap().getGround().getHeight(),
-                        40, getMap().getGround());
+                entity.spawn(super.getPicture().getWidth() - getMap().getGround().getWidth(),
+                        super.getPicture().getHeight() - getMap().getGround().getHeight() ,
+                        40, getMap().getGround(),this);
             } else {
-                entity.spawn(picture.getWidth(),
-                        picture.getHeight() - getMap().getGround().getHeight(),
-                        80,getMap().getGround());
+                entity.spawn(super.getPicture().getWidth(),
+                        super.getPicture().getHeight() - getMap().getGround().getHeight(),
+                        80,getMap().getGround(),this);
             }
         }
 
+    }
+
+    public List<Entity> getEntities() {
+        return entities;
+    }
+
+    private void generateEntitys() {
+        entities.add(new Ogre(100, 100));
+        entities.add(new Bryan(100, 100));
     }
 
 

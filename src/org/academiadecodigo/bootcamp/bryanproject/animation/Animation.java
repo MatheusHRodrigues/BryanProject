@@ -8,6 +8,7 @@ public class Animation {
     private String path = "Game/Animations/";
     private String fileConcat = "-";
     private String tag = "{}";
+    private Boolean idle;
 
     public void runAnimation(Entity entity, AnimationType type) {
         String load = path + "Entity/" + entity.getEntityType().getName() + "/" + entity.getEntityType().getName().toLowerCase() + fileConcat + type.toString().toLowerCase()  + fileConcat + tag + ".png";
