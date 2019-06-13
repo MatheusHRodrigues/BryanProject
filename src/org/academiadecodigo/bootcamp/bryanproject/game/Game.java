@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.bryanproject.game;
 
+import org.academiadecodigo.bootcamp.bryanproject.Music.Sound;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Bryan;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
 import org.academiadecodigo.bootcamp.bryanproject.entity.npc.Ogre;
@@ -26,6 +27,7 @@ public class Game {
     public void init() throws InterruptedException {
         Picture picture = new Picture(grid.getX(), grid.getY(), worlds.get(0).getMap().getBackgroudPath());
         picture.draw();
+        Sound.music();
         Entity bryan = new Bryan(100, 100, 10);
         bryan.spawn(picture.getWidth() - worlds.get(0).getMap().getGround().getWidth(),
                 picture.getHeight() - worlds.get(0).getMap().getGround().getHeight(),
