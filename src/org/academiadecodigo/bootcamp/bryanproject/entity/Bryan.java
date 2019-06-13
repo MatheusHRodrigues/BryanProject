@@ -18,4 +18,9 @@ public class Bryan extends Entity {
         super.spawn(x + size, y - size, size, ground,world);
         player = new Player(this);
     }
+
+    @Override
+    public boolean isAPlayer() {
+        return true;
+    }
 }

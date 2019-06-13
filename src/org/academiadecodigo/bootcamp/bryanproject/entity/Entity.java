@@ -129,8 +129,25 @@ public abstract class Entity {
     }
 
     public void hit(int damage) {
-        animation.runAnimation(this, AnimationType.DIE);
+        System.out.println("ATAQUE");
+        animation.runAnimation(this, AnimationType.JUMP);
+
     }
 
+    public boolean isAPlayer() {
+        return false;
+    }
+
+    public World getWorld() {
+        return world;
+    }
+
+    public boolean isDead() {
+        return false;
+    }
+
+    public Rectangle getHitbox() {
+        return hitbox;
+    }
 }
 

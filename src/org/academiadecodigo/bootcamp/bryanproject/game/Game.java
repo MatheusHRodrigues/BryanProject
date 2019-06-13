@@ -1,12 +1,10 @@
 package org.academiadecodigo.bootcamp.bryanproject.game;
 
-import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
 import org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld;
 import org.academiadecodigo.bootcamp.bryanproject.world.World;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Game {
