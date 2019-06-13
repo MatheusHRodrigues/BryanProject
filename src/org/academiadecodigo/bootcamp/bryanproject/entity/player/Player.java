@@ -33,12 +33,16 @@ public final class Player implements KeyboardHandler {
                         entity.jump();
                     }
                 }).start();
+
+            case KeyboardEvent.KEY_Z:
+                entity.attack();
                 break;
         }
     }
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
+        // idle
 
     }
 }

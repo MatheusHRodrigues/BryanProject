@@ -4,7 +4,8 @@ public enum AnimationType {
     WALK("walk"),
     RUN("run"),
     JUMP("jump"),
-    IDLE("idle");
+    IDLE("idle"),
+    DIE("die");
 
     private String name;
 

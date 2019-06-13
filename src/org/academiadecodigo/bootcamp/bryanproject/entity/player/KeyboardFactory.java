@@ -22,5 +22,10 @@ public class KeyboardFactory {
         event2.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(event2);
 
+        KeyboardEvent event3 = new KeyboardEvent();
+        event3.setKey(KeyboardEvent.KEY_Z);
+        event3.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        keyboard.addEventListener(event3);
+
     }
 }
