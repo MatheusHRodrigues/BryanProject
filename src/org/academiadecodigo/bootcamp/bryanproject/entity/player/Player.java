@@ -19,30 +19,34 @@ public final class Player implements KeyboardHandler {
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
-        switch (keyboardEvent.getKey()) {
-            case KeyboardEvent.KEY_RIGHT:
-                entity.moveForward(10);
-                break;
-            case KeyboardEvent.KEY_LEFT:
-                entity.moveBackwards(10);
-                break;
-            case KeyboardEvent.KEY_UP:
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        entity.jump();
-                    }
-                }).start();
+        if (!entity.isMovingBlock()) {
+            entity.setMoving(true);
+            switch (keyboardEvent.getKey()) {
+                case KeyboardEvent.KEY_RIGHT:
+                    entity.moveForward(10);
+                    break;
+                case KeyboardEvent.KEY_LEFT:
+                    entity.moveBackwards(10);
+                    break;
+                case KeyboardEvent.KEY_UP:
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            entity.jump();
+                        }
+                    }).start();
 
-            case KeyboardEvent.KEY_Z:
-                entity.attack();
-                break;
+                case KeyboardEvent.KEY_Z:
+                    entity.attack();
+                    break;
+            }
         }
     }
 
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
         // idle
+        entity.setMoving(false);
 
     }
 }

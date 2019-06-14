@@ -20,6 +20,9 @@ public abstract class Entity {
     private int size;
     private EntityType entityType;
     private World world;
+    private boolean movingBlock;
+    private boolean moving;
+    private boolean attacking;
 
     public Entity(int health, int healthScale, EntityType entityType) {
         this.entityType = entityType;
@@ -41,7 +44,12 @@ public abstract class Entity {
 
     public void addGraphicsRepresentation() {
         graphicsRep = new Picture(0, 0,
-                "Game/Animations/Entity/" + entityType.getName() + "/" + entityType.getName().toLowerCase() + "-idle-0.png");
+                "Game/Animations/Entity/" + entityType.getName() + "/idle/right-0.png");
+    }
+
+    public void addGraphicsRepresentation(AnimationDirection animationDirection) {
+        graphicsRep = new Picture(0, 0,
+                "Game/Animations/Entity/" + entityType.getName() + "/idle/" + animationDirection + "-0.png");
     }
 
     private void addHitBox(int x, int y, int width, int height) {
@@ -55,6 +63,7 @@ public abstract class Entity {
         hitbox.grow(size, size);
         hitbox.draw();
         animation = new Animation();
+        animation.startIdle(this);
     }
 
     public Picture getGraphicsRep() {
@@ -83,26 +92,56 @@ public abstract class Entity {
     }
 
     public void jump() {
+        try {
         if (!jumping) {
             jumping = true;
+            movingBlock = true;
             int oldY = position.getY();
-            position.moveUp(graphicsRep.getHeight());
+            position.moveUp(graphicsRep.getHeight()/2);
             graphicsRep.translate(0, position.getY() - oldY);
             hitbox.translate(0, position.getY() - oldY);
             animation.runAnimation(this, AnimationType.JUMP);
-            try {
-                Thread.sleep(180);
-                jumping = false;
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
+            Thread.sleep(180/4);
+
             oldY = position.getY();
-            position.moveDown(graphicsRep.getHeight());
+            position.moveUp(graphicsRep.getHeight()/2);
             graphicsRep.translate(0, position.getY() - oldY);
             hitbox.translate(0, position.getY() - oldY);
-            animation.runAnimation(this, AnimationType.IDLE);
+            animation.runAnimation(this, AnimationType.JUMP);
+
+
+            Thread.sleep(180/2);
+
+
+            oldY = position.getY();
+            position.moveDown(graphicsRep.getHeight()/2);
+            graphicsRep.translate(0, position.getY() - oldY);
+            hitbox.translate(0, position.getY() - oldY);
+            animation.runAnimation(this,AnimationType.JUMP);
+
+
+            Thread.sleep(180/4);
+
+            oldY = position.getY();
+            position.moveDown(graphicsRep.getHeight()/2);
+            graphicsRep.translate(0, position.getY() - oldY);
+            hitbox.translate(0, position.getY() - oldY);
+            animation.runAnimation(this,AnimationType.JUMP);
+
+            jumping = false;
+            movingBlock = false;
+
+        }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     } //TROCAR MOVIMENTOS POR INTERFACE
+
+    public boolean isMovingBlock() {
+        return movingBlock;
+    }
 
     public boolean hitable(int x, int y, int h, int w) {
         int xReverse = x + w;
@@ -118,19 +157,79 @@ public abstract class Entity {
         return y >= yReverseThis && yThis >= yReverse;
     }
 
+    public void setMovingBlock(boolean movingBlock) {
+        this.movingBlock = movingBlock;
+    }
+
     public void attack() {
-        List<Entity> entities = world.getEntities();
-        for (Entity en : entities) {
-            if (en.hashCode() != this.hashCode()) {
-                en.hitable(hitbox.getX(), hitbox.getY(), hitbox.getHeight(), hitbox.getWidth());
-                en.hit(10);
+        //CREATE THREAD
+        class Attack implements Runnable {
+            private Entity entity;
+
+            public Attack(Entity entity) {
+                this.entity = entity;
+            }
+            @Override
+            public void run() {
+                if (!entity.isAttacking()) {
+                    entity.setAttacking(true);
+                    entity.setMoving(true);
+                    entity.setMovingBlock(true);
+                    List<Entity> entities = world.getEntities();
+                    for (int i = 0; i < 5; i++) {
+                        animation.runAnimation(entity,AnimationType.ATACK);
+                        try {
+                            Thread.sleep(30);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    for (Entity en : entities) {
+                        if (en.hashCode() != entity.hashCode()) {
+                            en.hitable(hitbox.getX(), hitbox.getY(), hitbox.getHeight(), hitbox.getWidth());
+                            en.hit(10);
+                        }
+                    }
+                    entity.setMovingBlock(false);
+                    entity.setMoving(false);
+                    entity.setAttacking(false);
+                }
             }
         }
+
+        new Thread(new Attack(this)).start();
     }
 
     public void hit(int damage) {
-        System.out.println("ATAQUE");
-        animation.runAnimation(this, AnimationType.JUMP);
+        this.setMoving(true);
+
+        class Hit implements Runnable {
+
+            private Entity entity;
+
+            public Hit(Entity entity) {
+                this.entity = entity;
+            }
+            @Override
+            public void run() {
+                entity.setMovingBlock(true);
+                for (int i = 0; i < 5; i++) {
+                    animation.runAnimation(entity, AnimationType.HURT);
+                    try {
+                        Thread.sleep(50);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    //Chance de da Break
+                }
+                entity.setMovingBlock(false);
+                entity.setMoving(false);
+            }
+
+        }
+
+        new Thread(new Hit(this)).start();
+
 
     }
 
@@ -148,6 +247,22 @@ public abstract class Entity {
 
     public Rectangle getHitbox() {
         return hitbox;
+    }
+
+    public boolean isMoving() {
+        return moving;
+    }
+
+    public void setMoving(boolean moving) {
+        this.moving = moving;
+    }
+
+    public boolean isAttacking() {
+        return attacking;
+    }
+
+    public void setAttacking(boolean attacking) {
+        this.attacking = attacking;
     }
 }
 

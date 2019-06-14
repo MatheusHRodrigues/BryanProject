@@ -38,6 +38,7 @@ public abstract class NPC extends Entity {
                                 if (entity.hitable(npc.getHitbox().getX(), npc.getHitbox().getY(), npc.getHitbox().getHeight(), npc.getHitbox().getWidth())) {
                                     entity.hit(10);
                                 } else {
+                                    npc.setMoving(true);
                                     moveBackwards(2);
                                 }
                                 try {
