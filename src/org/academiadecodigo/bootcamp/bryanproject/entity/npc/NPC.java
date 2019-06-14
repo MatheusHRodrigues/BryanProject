@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.bryanproject.entity.npc;
 
+import org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
 import org.academiadecodigo.bootcamp.bryanproject.entity.EntityType;
 
@@ -36,13 +37,24 @@ public abstract class NPC extends Entity {
                         if (entity.isAPlayer()) {
                             while (!entity.isDead()) {
                                 if (entity.hitable(npc.getHitbox().getX(), npc.getHitbox().getY(), npc.getHitbox().getHeight(), npc.getHitbox().getWidth())) {
+                                    npc.setMoving(true);
+                                    synchronized (this) {
+                                        for (int i = 0; i < 5; i++) {
+                                            npc.getAnimation().runAnimation(npc, AnimationType.ATACK);
+                                            try {
+                                                Thread.sleep(30);
+                                            } catch (InterruptedException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    }
                                     entity.hit(10);
                                 } else {
                                     npc.setMoving(true);
                                     moveBackwards(2);
                                 }
                                 try {
-                                    Thread.sleep(300);
+                                    Thread.sleep(2000);
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
                                 }
@@ -50,6 +62,7 @@ public abstract class NPC extends Entity {
                             }
                         }
                     }
+                    npc.setMoving(false);
                 }
             }
         }

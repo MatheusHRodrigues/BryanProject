@@ -42,6 +42,10 @@ public abstract class Entity {
         return entityType;
     }
 
+    public Animation getAnimation() {
+        return animation;
+    }
+
     public void addGraphicsRepresentation() {
         graphicsRep = new Picture(0, 0,
                 "Game/Animations/Entity/" + entityType.getName() + "/idle/right-0.png");
