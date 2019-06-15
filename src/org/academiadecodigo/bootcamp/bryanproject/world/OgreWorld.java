@@ -23,7 +23,6 @@ public class OgreWorld extends World {
     public void init() {
         super.addPicture(new Picture(super.getGame().getGrid().getX(),super.getGame().getGrid().getY(), super.getMap().getBackgroudPath()));
         super.getPicture().draw();
-        Sound.music();
         generateEntitys();
         for (Entity entity : entities) {
             if (entity instanceof Bryan) {
