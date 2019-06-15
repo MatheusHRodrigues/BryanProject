@@ -12,7 +12,7 @@ public abstract class NPC extends Entity {
     }
 
     public void start() {
-        agressive();
+        AI.Agressive(this);
     }
 
     public void agressive() {
@@ -36,11 +36,11 @@ public abstract class NPC extends Entity {
                     for (Entity entity : entities) {
                         if (entity.isAPlayer()) {
                             while (!entity.isDead()) {
-                                if (entity.hitable(npc.getHitbox().getX(), npc.getHitbox().getY(), npc.getHitbox().getHeight(), npc.getHitbox().getWidth())) {
-                                    npc.setMoving(true);
+                                if (entity.getEntityManager().getHitBox().hitable(npc.getEntityManager().getHitBox().getX(), npc.getEntityManager().getHitBox().getY(), npc.getEntityManager().getHitBox().getHeight(), npc.getEntityManager().getHitBox().getWidth())) {
+                                    npc.getEntityManager().getMoves().setMoving(true);
                                     synchronized (this) {
                                         for (int i = 0; i < 5; i++) {
-                                            npc.getAnimation().runAnimation(npc, AnimationType.ATACK);
+                                            npc.getEntityManager().getGraphics().getAnimation().runAnimation(npc, AnimationType.ATACK);
                                             try {
                                                 Thread.sleep(30);
                                             } catch (InterruptedException e) {
@@ -50,8 +50,8 @@ public abstract class NPC extends Entity {
                                     }
                                     entity.hit(10);
                                 } else {
-                                    npc.setMoving(true);
-                                    moveBackwards(2);
+                                    npc.getEntityManager().getMoves().setMoving(true);
+                                    npc.getEntityManager().getMoves().moveBackwards(2);
                                 }
                                 try {
                                     Thread.sleep(2000);
@@ -62,7 +62,7 @@ public abstract class NPC extends Entity {
                             }
                         }
                     }
-                    npc.setMoving(false);
+                    npc.getEntityManager().getMoves().setMoving(false);
                 }
             }
         }

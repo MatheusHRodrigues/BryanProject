@@ -1,13 +1,14 @@
 package org.academiadecodigo.bootcamp.bryanproject.world;
 
 import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
+import org.academiadecodigo.bootcamp.bryanproject.game.Displayable;
 import org.academiadecodigo.bootcamp.bryanproject.game.Game;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class World {
+public abstract class World implements Displayable {
     private Map map;
     private Game game;
     private Picture picture;
@@ -37,6 +38,5 @@ public abstract class World {
     public List<Entity> getEntities() {
         return entities;
     }
-    public abstract void init();
 
 }

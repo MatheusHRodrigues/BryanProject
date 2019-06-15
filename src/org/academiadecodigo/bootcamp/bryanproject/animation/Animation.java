@@ -11,7 +11,7 @@ public class Animation {
     private String fileConcat = "-";
     private String tag = "{}";
     private Date date;
-    private Boolean idle;
+    private Boolean idle; //TODO USAR
     private AnimationDirection lastDirection = AnimationDirection.RIGHT;
 
 
@@ -49,7 +49,7 @@ public class Animation {
                 while (true) {
                     synchronized (this) {
                         long time = new Date(System.currentTimeMillis()).getTime();
-                        if (animation.getDate().getTime() + 10 < time && !entity.isMoving()) {
+                        if (animation.getDate().getTime() + 10 < time && !entity.getEntityManager().getMoves().isMoving()) {
                             animation.runAnimation(entity, AnimationType.IDLE, animation.getLastDirection());
                             try {
                                 Thread.sleep(100);
@@ -62,7 +62,6 @@ public class Animation {
             }
         }
         Thread t = new Thread(new Idle(entity, this));
-
         t.start();
     }
 
@@ -72,7 +71,7 @@ public class Animation {
             currentType = type;
             if (frame < 3) {
                 load = load.replace("{}", new Integer(frame).toString());
-                entity.getGraphicsRep().load(load);
+                entity.getEntityManager().getGraphics().getGraphicsRep().load(load);
             } else {
                 frame = -1;
             }

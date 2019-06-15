@@ -1,41 +1,18 @@
 package org.academiadecodigo.bootcamp.bryanproject.world;
 
 
-public class Position {
+public interface Position {
 
-    private int x;
-    private int y;
-    private int height;
-    private int width;
 
-    public Position(int x, int y, int height, int width) {
-        this.x = x;
-        this.y = y;
-        this.height = height;
-        this.width = width;
-    }
+    int getX();
 
-    public int getX() {
-        return x;
-    }
+    void setX(int x);
 
-    public int getY() {
-        return y;
-    }
+    int getY();
 
-    public void setX(int x) {
-        this.x = x;
-    }
+    void setY(int y);
 
-    public void setY(int y) {
-        this.y = y;
-    }
+    int getHeight();
 
-    public int getHeight() {
-        return height;
-    }
-
-    public int getWidth() {
-        return width;
-    }
+    int getWidth();
 }

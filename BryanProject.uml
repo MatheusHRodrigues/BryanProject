@@ -3,78 +3,483 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="396.0" y="1208.0">org.academiadecodigo.bootcamp.bryanproject.Main</node>
-    <node x="712.0" y="1208.0">org.academiadecodigo.bootcamp.bryanproject.world.objects.WorldObjects</node>
-    <node x="378.0" y="937.0">org.academiadecodigo.bootcamp.bryanproject.entity.player.Player</node>
-    <node x="964.5" y="0.0">org.academiadecodigo.bootcamp.bryanproject.animation.Animation</node>
-    <node x="218.5" y="652.0">org.academiadecodigo.bootcamp.bryanproject.entity.Bryan</node>
-    <node x="0.0" y="1208.0">org.academiadecodigo.bootcamp.bryanproject.animation.AnimationDirection</node>
-    <node x="571.0" y="1208.0">org.academiadecodigo.bootcamp.bryanproject.music.Sound</node>
-    <node x="727.0" y="0.0">org.academiadecodigo.bootcamp.bryanproject.world.Position</node>
-    <node x="38.5" y="664.0">org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC</node>
-    <node x="500.5" y="0.0">org.academiadecodigo.bootcamp.bryanproject.world.World</node>
-    <node x="861.0" y="937.0">org.academiadecodigo.bootcamp.bryanproject.entity.EntityType</node>
-    <node x="631.0" y="937.0">org.academiadecodigo.bootcamp.bryanproject.entity.HealthManage</node>
-    <node x="1034.0" y="937.0">org.academiadecodigo.bootcamp.bryanproject.world.Map</node>
-    <node x="1222.0" y="937.0">org.academiadecodigo.bootcamp.bryanproject.world.Ground</node>
-    <node x="704.5" y="188.0">org.academiadecodigo.bootcamp.bryanproject.entity.EntityPosition</node>
-    <node x="0.0" y="937.0">org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType</node>
-    <node x="204.0" y="1208.0">org.academiadecodigo.bootcamp.bryanproject.entity.player.KeyboardFactory</node>
-    <node x="71.25" y="0.0">org.academiadecodigo.bootcamp.bryanproject.entity.Entity</node>
-    <node x="198.0" y="937.0">org.academiadecodigo.bootcamp.bryanproject.game.Game</node>
-    <node x="507.0" y="233.0">org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld</node>
-    <node x="0.0" y="820.0">org.academiadecodigo.bootcamp.bryanproject.entity.npc.Ogre</node>
+    <node x="1547.4643408389002" y="2934.5">org.academiadecodigo.bootcamp.bryanproject.Main</node>
+    <node x="0.0" y="1601.5">org.academiadecodigo.bootcamp.bryanproject.entity.npc.AI</node>
+    <node x="1879.1896712274656" y="1601.5">org.academiadecodigo.bootcamp.bryanproject.game.Displayable</node>
+    <node x="1066.2332492091173" y="288.5642201834862">org.academiadecodigo.bootcamp.bryanproject.world.objects.WorldObjects</node>
+    <node x="1231.882866839044" y="1893.0">org.academiadecodigo.bootcamp.bryanproject.entity.player.Player</node>
+    <node x="507.7265176326948" y="276.0">org.academiadecodigo.bootcamp.bryanproject.animation.Animation</node>
+    <node x="1339.1488095238096" y="376.5">org.academiadecodigo.bootcamp.bryanproject.world.Position</node>
+    <node x="220.25714285714287" y="1195.5">org.academiadecodigo.bootcamp.bryanproject.entity.EntityType</node>
+    <node x="568.4769257703086" y="1195.5">org.academiadecodigo.bootcamp.bryanproject.entity.HealthManage</node>
+    <node x="470.08068429936156" y="0.0">org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType</node>
+    <node x="1262.5286265531859" y="729.5">org.academiadecodigo.bootcamp.bryanproject.entity.EntityLogical</node>
+    <node x="1381.8325283703227" y="1601.5">org.academiadecodigo.bootcamp.bryanproject.entity.player.KeyboardFactory</node>
+    <node x="702.5286265531859" y="696.0">org.academiadecodigo.bootcamp.bryanproject.entity.EntityGraphics</node>
+    <node x="842.7786265531859" y="2331.0">org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld</node>
+    <node x="778.4769257703088" y="1118.0">org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager</node>
+    <node x="1847.9037001723773" y="2878.0">org.academiadecodigo.bootcamp.bryanproject.game.Menu</node>
+    <node x="964.5286265531859" y="774.0">org.academiadecodigo.bootcamp.bryanproject.entity.EntityHitBox</node>
+    <node x="656.088367269985" y="77.5">org.academiadecodigo.bootcamp.bryanproject.animation.AnimationDirection</node>
+    <node x="455.0786265531858" y="652.0">org.academiadecodigo.bootcamp.bryanproject.entity.EntityMove</node>
+    <node x="1669.1896712274656" y="2343.0">org.academiadecodigo.bootcamp.bryanproject.music.Sound</node>
+    <node x="44.799999999999955" y="1915.5">org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC</node>
+    <node x="1553.8325283703227" y="1882.0">org.academiadecodigo.bootcamp.bryanproject.world.World</node>
+    <node x="1653.4753855131798" y="1579.0">org.academiadecodigo.bootcamp.bryanproject.world.Map</node>
+    <node x="1493.9662001723773" y="763.0">org.academiadecodigo.bootcamp.bryanproject.world.Ground</node>
+    <node x="1816.5703668390443" y="3090.0">org.academiadecodigo.bootcamp.bryanproject.game.GameOver</node>
+    <node x="1950.6896712274656" y="2342.5">org.academiadecodigo.bootcamp.bryanproject.game.MainMenu</node>
+    <node x="100.75" y="2156.0">org.academiadecodigo.bootcamp.bryanproject.entity.boss.Ogre</node>
+    <node x="597.2111662357256" y="1490.0">org.academiadecodigo.bootcamp.bryanproject.entity.Entity</node>
+    <node x="1623.8143408389003" y="2590.0">org.academiadecodigo.bootcamp.bryanproject.game.Game</node>
+    <node x="797.2786265531859" y="2133.0">org.academiadecodigo.bootcamp.bryanproject.entity.heros.Bryan</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.Bryan" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
-      <point x="0.0" y="-59.0" />
-      <point x="337.0" y="627.0" />
-      <point x="306.0" y="627.0" />
-      <point x="78.25" y="301.0" />
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.Game" target="org.academiadecodigo.bootcamp.bryanproject.game.MainMenu">
+      <point x="56.53846153846143" y="-114.0" />
+      <point x="1753.8528023773617" y="2560.0" />
+      <point x="1977.1896712274656" y="2560.0" />
+      <point x="-79.5" y="58.0" />
     </edge>
-    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityPosition" target="org.academiadecodigo.bootcamp.bryanproject.world.Position">
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.MainMenu" target="org.academiadecodigo.bootcamp.bryanproject.game.Game">
+      <point x="-26.5" y="58.0" />
+      <point x="2030.1896712274656" y="2570.0" />
+      <point x="1765.1604946850541" y="2570.0" />
+      <point x="67.84615384615381" y="-114.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.World" target="org.academiadecodigo.bootcamp.bryanproject.world.Map">
+      <point x="23.28571428571422" y="-80.5" />
+      <point x="1658.618242656037" y="1842.0" />
+      <point x="1677.9753855131798" y="1842.0" />
+      <point x="-49.0" y="47.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.boss.Ogre" target="org.academiadecodigo.bootcamp.bryanproject.world.World">
+      <point x="96.39999999999998" y="-36.0" />
+      <point x="317.65" y="2093.0" />
+      <point x="1565.4753855131798" y="2093.0" />
+      <point x="-69.85714285714289" y="80.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityType">
+      <point x="0.0" y="-47.0" />
+      <point x="126.79999999999995" y="1862.0" />
+      <point x="152.5" y="1862.0" />
+      <point x="152.5" y="1460.0" />
+      <point x="233.4571428571428" y="1460.0" />
+      <point x="-52.80000000000007" y="58.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.heros.Bryan" target="org.academiadecodigo.bootcamp.bryanproject.world.World">
+      <point x="103.28571428571422" y="-59.0" />
+      <point x="1021.0643408389001" y="2103.0" />
+      <point x="1588.761099798894" y="2103.0" />
+      <point x="-46.57142857142867" y="80.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityGraphics" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager">
+      <point x="100.83333333333337" y="114.0" />
+      <point x="924.3619598865192" y="988.0" />
+      <point x="899.3380368814198" y="988.0" />
+      <point x="6.361111111111086" y="-136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager" target="org.academiadecodigo.bootcamp.bryanproject.world.Position">
+      <point x="82.69444444444446" y="-136.0" />
+      <point x="975.6713702147531" y="1048.0" />
+      <point x="1461.0286265531859" y="1048.0" />
+      <point x="1461.0286265531859" y="632.0" />
+      <point x="1406.6488095238096" y="632.0" />
+      <point x="22.5" y="57.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityMove" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
+      <point x="-62.571428571428555" y="158.0" />
+      <point x="502.00719798175726" y="1088.0" />
+      <point x="513.2551003734833" y="1088.0" />
+      <point x="513.2551003734833" y="1420.0" />
+      <point x="674.6754519500113" y="1420.0" />
+      <point x="-43.035714285714334" y="-136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld" target="org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC">
+      <point x="-67.5" y="-69.5" />
+      <point x="850.2786265531859" y="2311.0" />
+      <point x="82.16666666666674" y="2311.0" />
+      <point x="82.16666666666674" y="2113.0" />
+      <point x="72.13333333333321" y="2113.0" />
+      <point x="-54.66666666666674" y="47.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.animation.Animation" target="org.academiadecodigo.bootcamp.bryanproject.animation.AnimationDirection">
+      <point x="137.625" y="-158.0" />
+      <point x="828.8515176326948" y="256.0" />
+      <point x="789.4217006033184" y="256.0" />
+      <point x="53.33333333333337" y="35.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld" target="org.academiadecodigo.bootcamp.bryanproject.world.Ground">
+      <point x="67.5" y="-69.5" />
+      <point x="985.2786265531859" y="2311.0" />
+      <point x="1868.6896712274656" y="2311.0" />
+      <point x="1868.6896712274656" y="1078.0" />
+      <point x="1606.4662001723773" y="1078.0" />
+      <point x="52.5" y="47.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld" target="org.academiadecodigo.bootcamp.bryanproject.world.Map">
+      <point x="52.5" y="-69.5" />
+      <point x="970.2786265531859" y="2301.0" />
+      <point x="1845.6896712274656" y="2301.0" />
+      <point x="1845.6896712274656" y="1852.0" />
+      <point x="1775.9753855131798" y="1852.0" />
+      <point x="49.0" y="47.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityGraphics" target="org.academiadecodigo.bootcamp.bryanproject.animation.Animation">
+      <point x="-80.66666666666674" y="-114.0" />
+      <point x="742.8619598865191" y="632.0" />
+      <point x="691.2265176326948" y="632.0" />
+      <point x="0.0" y="158.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityLogical" target="org.academiadecodigo.bootcamp.bryanproject.world.Position">
       <point x="0.0" y="-80.5" />
-      <point x="0.0" y="69.0" />
+      <point x="1356.5286265531859" y="632.0" />
+      <point x="1361.6488095238096" y="632.0" />
+      <point x="-22.5" y="57.5" />
     </edge>
-    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.npc.Ogre" target="org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC">
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.MainMenu" target="org.academiadecodigo.bootcamp.bryanproject.game.Menu">
+      <point x="79.5" y="58.0" />
+      <point x="2136.1896712274656" y="2570.0" />
+      <point x="2128.1896712274656" y="2570.0" />
+      <point x="2128.1896712274656" y="2848.0" />
+      <point x="2012.9037001723773" y="2848.0" />
+      <point x="55.0" y="-81.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.Game" target="org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld">
+      <point x="-56.53846153846166" y="-114.0" />
+      <point x="1640.7758793004386" y="2560.0" />
+      <point x="917.7786265531859" y="2560.0" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
+      <point x="45.799999999999955" y="136.0" />
+      <point x="938.7769257703087" y="1450.0" />
+      <point x="795.1754519500113" y="1450.0" />
+      <point x="77.46428571428567" y="-136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.Main" target="org.academiadecodigo.bootcamp.bryanproject.game.Game">
+      <point x="0.0" y="-24.5" />
+      <point x="1614.4643408389002" y="2858.0" />
+      <point x="1638.5143408389004" y="2858.0" />
+      <point x="-58.799999999999955" y="114.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityMove">
+      <point x="-95.41666666666674" y="-136.0" />
+      <point x="797.560259103642" y="1078.0" />
+      <point x="564.5786265531858" y="1078.0" />
+      <point x="0.0" y="158.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.animation.Animation" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
+      <point x="-146.79999999999995" y="158.0" />
+      <point x="544.4265176326949" y="632.0" />
+      <point x="387.3571428571429" y="632.0" />
+      <point x="387.3571428571429" y="1440.0" />
+      <point x="640.2468805214398" y="1440.0" />
+      <point x="-77.46428571428578" y="-136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.Map" target="org.academiadecodigo.bootcamp.bryanproject.world.Ground">
+      <point x="-36.75" y="-47.0" />
+      <point x="1690.2253855131798" y="1470.0" />
+      <point x="1721.4753855131798" y="1470.0" />
+      <point x="1721.4753855131798" y="1098.0" />
+      <point x="1576.4662001723773" y="1098.0" />
+      <point x="22.5" y="47.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.heros.Bryan" target="org.academiadecodigo.bootcamp.bryanproject.entity.player.Player">
+      <point x="34.428571428571445" y="-59.0" />
+      <point x="952.2071979817574" y="2073.0" />
+      <point x="1390.882866839044" y="2073.0" />
+      <point x="53.0" y="69.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.Menu" target="org.academiadecodigo.bootcamp.bryanproject.game.Game">
+      <point x="-91.66666666666674" y="-81.0" />
+      <point x="1866.2370335057108" y="2858.0" />
+      <point x="1697.3143408389003" y="2858.0" />
+      <point x="0.0" y="114.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityMove" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager">
+      <point x="93.85714285714289" y="158.0" />
+      <point x="658.4357694103287" y="1048.0" />
+      <point x="835.7269257703088" y="1048.0" />
+      <point x="-57.25" y="-136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.Entity" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager">
+      <point x="60.25" y="-136.0" />
+      <point x="777.9611662357256" y="1440.0" />
+      <point x="892.9769257703088" y="1440.0" />
+      <point x="0.0" y="136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager" target="org.academiadecodigo.bootcamp.bryanproject.world.Ground">
+      <point x="108.13888888888891" y="-136.0" />
+      <point x="1001.1158146591977" y="1068.0" />
+      <point x="1516.4662001723773" y="1068.0" />
+      <point x="-37.5" y="47.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.World" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
+      <point x="-46.57142857142867" y="-80.5" />
+      <point x="1588.761099798894" y="1802.0" />
+      <point x="788.0028329023921" y="1802.0" />
+      <point x="70.29166666666652" y="136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.boss.Ogre" target="org.academiadecodigo.bootcamp.bryanproject.world.Ground">
+      <point x="48.200000000000045" y="-36.0" />
+      <point x="269.45000000000005" y="2113.0" />
+      <point x="230.29999999999995" y="2113.0" />
+      <point x="230.29999999999995" y="1862.0" />
+      <point x="1371.3325283703227" y="1862.0" />
+      <point x="1371.3325283703227" y="1088.0" />
+      <point x="1546.4662001723773" y="1088.0" />
+      <point x="-7.5" y="47.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.Entity" target="org.academiadecodigo.bootcamp.bryanproject.world.World">
+      <point x="90.37499999999989" y="136.0" />
+      <point x="808.0861662357255" y="1792.0" />
+      <point x="1612.0468140846085" y="1792.0" />
+      <point x="-23.28571428571422" y="-80.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.Entity" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityType">
+      <point x="-94.67857142857156" y="-136.0" />
+      <point x="623.032594807154" y="1450.0" />
+      <point x="339.05714285714294" y="1450.0" />
+      <point x="52.80000000000001" y="58.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.Game" target="org.academiadecodigo.bootcamp.bryanproject.game.Menu">
+      <point x="58.799999999999955" y="114.0" />
+      <point x="1756.1143408389003" y="2838.0" />
+      <point x="1939.5703668390443" y="2838.0" />
+      <point x="-18.333333333333258" y="-81.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.npc.AI" target="org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC">
+      <point x="35.5" y="24.5" />
+      <point x="106.5" y="1862.0" />
+      <point x="94.0" y="1862.0" />
+      <point x="-32.799999999999955" y="-47.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.World" target="org.academiadecodigo.bootcamp.bryanproject.game.Displayable">
+      <point x="69.85714285714289" y="-80.5" />
+      <point x="1705.1896712274656" y="1862.0" />
+      <point x="1893.0646712274656" y="1862.0" />
+      <point x="-41.625" y="24.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityMove" target="org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType">
+      <point x="-73.0" y="-158.0" />
+      <point x="491.5786265531858" y="622.0" />
+      <point x="468.7967006033184" y="622.0" />
+      <point x="468.7967006033184" y="246.0" />
+      <point x="496.2473509660282" y="246.0" />
+      <point x="-52.33333333333337" y="113.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityLogical">
+      <point x="57.25" y="-136.0" />
+      <point x="950.2269257703088" y="1028.0" />
+      <point x="1309.5286265531859" y="1028.0" />
+      <point x="-47.0" y="80.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.Entity" target="org.academiadecodigo.bootcamp.bryanproject.world.Ground">
+      <point x="111.89285714285711" y="-136.0" />
+      <point x="829.6040233785827" y="1470.0" />
+      <point x="1287.412628743806" y="1470.0" />
+      <point x="1287.412628743806" y="1078.0" />
+      <point x="1531.4662001723773" y="1078.0" />
+      <point x="-22.5" y="47.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.boss.Ogre" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityType">
       <point x="0.0" y="-36.0" />
+      <point x="221.25" y="2113.0" />
+      <point x="219.29999999999995" y="2113.0" />
+      <point x="219.29999999999995" y="1470.0" />
+      <point x="259.8571428571429" y="1470.0" />
+      <point x="-26.399999999999977" y="58.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityMove" target="org.academiadecodigo.bootcamp.bryanproject.animation.AnimationDirection">
+      <point x="0.0" y="-158.0" />
+      <point x="564.5786265531858" y="612.0" />
+      <point x="479.7967006033184" y="612.0" />
+      <point x="479.7967006033184" y="256.0" />
+      <point x="682.7550339366517" y="256.0" />
+      <point x="-53.33333333333337" y="35.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
+      <point x="-22.5" y="-69.5" />
+      <point x="895.2786265531859" y="2281.0" />
+      <point x="363.25" y="2281.0" />
+      <point x="363.25" y="1852.0" />
+      <point x="667.5028329023922" y="1852.0" />
+      <point x="-50.20833333333337" y="136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld" target="org.academiadecodigo.bootcamp.bryanproject.entity.boss.Ogre">
+      <point x="-52.5" y="-69.5" />
+      <point x="865.2786265531859" y="2301.0" />
+      <point x="221.25" y="2301.0" />
+      <point x="0.0" y="36.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.GameOver" target="org.academiadecodigo.bootcamp.bryanproject.game.Game">
+      <point x="-70.66666666666652" y="-58.0" />
+      <point x="1851.9037001723777" y="3065.0" />
+      <point x="1691.9643408389002" y="3065.0" />
+      <point x="1691.9643408389002" y="2858.0" />
+      <point x="1667.9143408389002" y="2858.0" />
+      <point x="-29.40000000000009" y="114.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.Game" target="org.academiadecodigo.bootcamp.bryanproject.game.Displayable">
+      <point x="45.23076923076928" y="-114.0" />
+      <point x="1742.5451100696696" y="2550.0" />
+      <point x="1940.1896712274656" y="2550.0" />
+      <point x="1940.1896712274656" y="1862.0" />
+      <point x="1948.5646712274656" y="1862.0" />
+      <point x="13.875" y="24.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld" target="org.academiadecodigo.bootcamp.bryanproject.game.Game">
+      <point x="50.0" y="69.5" />
+      <point x="967.7786265531859" y="2550.0" />
+      <point x="1652.083571608131" y="2550.0" />
+      <point x="-45.23076923076928" y="-114.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityHitBox">
+      <point x="31.805555555555543" y="-136.0" />
+      <point x="924.7824813258642" y="1008.0" />
+      <point x="1103.5286265531859" y="1008.0" />
+      <point x="0.0" y="36.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.player.Player" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
+      <point x="-70.66666666666674" y="-69.5" />
+      <point x="1267.2162001723773" y="1832.0" />
+      <point x="727.7528329023922" y="1832.0" />
+      <point x="10.041666666666629" y="136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC" target="org.academiadecodigo.bootcamp.bryanproject.entity.npc.AI">
+      <point x="-65.6" y="-47.0" />
+      <point x="61.200000000000045" y="1862.0" />
+      <point x="35.5" y="1862.0" />
+      <point x="-35.5" y="24.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.heros.Bryan" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityType">
+      <point x="-103.28571428571422" y="-59.0" />
+      <point x="814.4929122674716" y="2083.0" />
+      <point x="382.6071428571429" y="2083.0" />
+      <point x="382.6071428571429" y="1470.0" />
+      <point x="286.25714285714287" y="1470.0" />
+      <point x="0.0" y="58.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityMove" target="org.academiadecodigo.bootcamp.bryanproject.animation.Animation">
+      <point x="73.0" y="-158.0" />
+      <point x="637.5786265531858" y="632.0" />
+      <point x="617.8265176326948" y="632.0" />
+      <point x="-73.39999999999998" y="158.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.Game" target="org.academiadecodigo.bootcamp.bryanproject.music.Sound">
+      <point x="-22.615384615384755" y="-114.0" />
+      <point x="1674.6989562235156" y="2490.0" />
+      <point x="1693.1896712274656" y="2490.0" />
+      <point x="-48.0" y="57.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.heros.Bryan" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
+      <point x="-34.42857142857133" y="-59.0" />
+      <point x="883.3500551246145" y="2073.0" />
+      <point x="831.7491950369892" y="2073.0" />
+      <point x="831.7491950369892" y="1842.0" />
+      <point x="707.6694995690589" y="1842.0" />
+      <point x="-10.041666666666742" y="136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityGraphics" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
+      <point x="-100.83333333333337" y="114.0" />
+      <point x="722.6952932198525" y="1098.0" />
+      <point x="767.9769257703088" y="1098.0" />
+      <point x="767.9769257703088" y="1410.0" />
+      <point x="726.3183090928685" y="1410.0" />
+      <point x="8.60714285714289" y="-136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.Game" target="org.academiadecodigo.bootcamp.bryanproject.world.World">
+      <point x="11.307692307692378" y="-114.0" />
+      <point x="1708.6220331465927" y="2520.0" />
+      <point x="1823.6896712274656" y="2520.0" />
+      <point x="1823.6896712274656" y="2113.0" />
+      <point x="1681.9039569417514" y="2113.0" />
+      <point x="46.57142857142867" y="80.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.boss.Ogre" target="org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC">
+      <point x="-96.39999999999998" y="-36.0" />
+      <point x="124.85000000000014" y="2113.0" />
+      <point x="126.79999999999995" y="2113.0" />
       <point x="0.0" y="47.0" />
     </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.Menu" target="org.academiadecodigo.bootcamp.bryanproject.game.Displayable">
+      <point x="91.66666666666652" y="-81.0" />
+      <point x="2049.570366839044" y="2858.0" />
+      <point x="2173.1896712274656" y="2858.0" />
+      <point x="2173.1896712274656" y="1862.0" />
+      <point x="1976.3146712274656" y="1862.0" />
+      <point x="41.625" y="24.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.EntityManager" target="org.academiadecodigo.bootcamp.bryanproject.entity.EntityGraphics">
+      <point x="-31.805555555555657" y="-136.0" />
+      <point x="861.1713702147531" y="1028.0" />
+      <point x="803.3619598865192" y="1028.0" />
+      <point x="-20.16666666666663" y="114.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.Entity" target="org.academiadecodigo.bootcamp.bryanproject.entity.HealthManage">
+      <point x="-8.60714285714289" y="-136.0" />
+      <point x="709.1040233785827" y="1470.0" />
+      <point x="710.2269257703086" y="1470.0" />
+      <point x="47.25" y="58.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld" target="org.academiadecodigo.bootcamp.bryanproject.entity.heros.Bryan">
+      <point x="-7.5" y="-69.5" />
+      <point x="910.2786265531859" y="2271.0" />
+      <point x="857.5286265531859" y="2271.0" />
+      <point x="-60.25" y="59.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.world.World" target="org.academiadecodigo.bootcamp.bryanproject.game.Game">
+      <point x="23.28571428571422" y="80.5" />
+      <point x="1658.6896712274656" y="2570.0" />
+      <point x="1663.3912639158234" y="2570.0" />
+      <point x="-33.923076923076906" y="-114.0" />
+    </edge>
     <edge source="org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld" target="org.academiadecodigo.bootcamp.bryanproject.world.World">
-      <point x="0.0" y="-69.5" />
-      <point x="0.0" y="91.5" />
+      <point x="37.5" y="-69.5" />
+      <point x="955.2786265531859" y="2291.0" />
+      <point x="1629.1896712274656" y="2291.0" />
+      <point x="1629.1896712274656" y="2113.0" />
+      <point x="1635.3325283703227" y="2113.0" />
+      <point x="0.0" y="80.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.player.Player" target="org.academiadecodigo.bootcamp.bryanproject.entity.player.KeyboardFactory">
+      <point x="70.66666666666674" y="-69.5" />
+      <point x="1408.5495335057108" y="1862.0" />
+      <point x="1457.3325283703227" y="1862.0" />
+      <point x="0.0" y="24.5" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.heros.Bryan" target="org.academiadecodigo.bootcamp.bryanproject.world.Ground">
+      <point x="68.85714285714289" y="-59.0" />
+      <point x="986.6357694103287" y="2083.0" />
+      <point x="1543.3325283703227" y="2083.0" />
+      <point x="1543.3325283703227" y="1098.0" />
+      <point x="1561.4662001723773" y="1098.0" />
+      <point x="7.5" y="47.0" />
     </edge>
     <edge source="org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC" target="org.academiadecodigo.bootcamp.bryanproject.entity.Entity">
-      <point x="0.0" y="-47.0" />
-      <point x="118.5" y="627.0" />
-      <point x="149.5" y="627.0" />
-      <point x="-78.25" y="301.0" />
+      <point x="32.80000000000001" y="-47.0" />
+      <point x="159.5999999999999" y="1822.0" />
+      <point x="607.2528329023922" y="1822.0" />
+      <point x="-110.45833333333337" y="136.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.animation.Animation" target="org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType">
+      <point x="-137.625" y="-158.0" />
+      <point x="553.6015176326948" y="246.0" />
+      <point x="548.5806842993616" y="246.0" />
+      <point x="0.0" y="113.0" />
+    </edge>
+    <edge source="org.academiadecodigo.bootcamp.bryanproject.game.GameOver" target="org.academiadecodigo.bootcamp.bryanproject.game.Menu">
+      <point x="0.0" y="-58.0" />
+      <point x="1922.5703668390443" y="3065.0" />
+      <point x="1902.9037001723773" y="3065.0" />
+      <point x="-55.0" y="81.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="1039.8055555555552" y="712.0" />
+  <settings layout="Hierarchic Group" zoom="0.2703037817730936" x="1171.5" y="1603.0" />
   <SelectedNodes>
-    <node>org.academiadecodigo.bootcamp.bryanproject.Main</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.world.objects.WorldObjects</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.player.Player</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.animation.Animation</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.Bryan</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.animation.AnimationDirection</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.music.Sound</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.world.Position</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.world.World</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.EntityType</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.HealthManage</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.world.Map</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.world.Ground</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.EntityPosition</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.animation.AnimationType</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.player.KeyboardFactory</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.Entity</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.game.Game</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld</node>
-    <node>org.academiadecodigo.bootcamp.bryanproject.entity.npc.Ogre</node>
+    <node>org.academiadecodigo.bootcamp.bryanproject.game.GameOver</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>

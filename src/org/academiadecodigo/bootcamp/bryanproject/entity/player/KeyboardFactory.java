@@ -34,17 +34,6 @@ public class KeyboardFactory {
         event3.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(event3);
 
-        KeyboardEvent event4 = new KeyboardEvent();
-        event4.setKey(KeyboardEvent.KEY_SPACE);
-        event4.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        keyboard.addEventListener(event4);
-
-        KeyboardEvent event5 = new KeyboardEvent();
-        event.setKey(KeyboardEvent.KEY_Q);
-        event.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        keyboard.addEventListener(event5);
-
-
         KeyboardEvent event1_re = new KeyboardEvent();
         event1_re.setKey(KeyboardEvent.KEY_LEFT);
         event1_re.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);

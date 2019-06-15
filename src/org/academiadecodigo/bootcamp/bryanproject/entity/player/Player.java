@@ -19,25 +19,25 @@ public final class Player implements KeyboardHandler {
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
-        if (!entity.isMovingBlock()) {
-            entity.setMoving(true);
+        if (!entity.getEntityManager().getMoves().isMovingBlock()) {
+            entity.getEntityManager().getMoves().setMoving(true);
             switch (keyboardEvent.getKey()) {
                 case KeyboardEvent.KEY_RIGHT:
-                    entity.moveForward(10);
+                    entity.getEntityManager().getMoves().moveForward(10);
                     break;
                 case KeyboardEvent.KEY_LEFT:
-                    entity.moveBackwards(10);
+                    entity.getEntityManager().getMoves().moveBackwards(10);
                     break;
                 case KeyboardEvent.KEY_UP:
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            entity.jump();
+                            entity.getEntityManager().getMoves().jump();
                         }
                     }).start();
-
+                    break;
                 case KeyboardEvent.KEY_Z:
-                    entity.attack();
+                    entity.getEntityManager().getMoves().attack();
                     break;
             }
         }
@@ -46,7 +46,7 @@ public final class Player implements KeyboardHandler {
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
         // idle
-        entity.setMoving(false);
+        entity.getEntityManager().getMoves().setMoving(false);
 
     }
 }
