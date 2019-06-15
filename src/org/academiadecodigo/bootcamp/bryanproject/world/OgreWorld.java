@@ -1,10 +1,11 @@
 package org.academiadecodigo.bootcamp.bryanproject.world;
 
-import org.academiadecodigo.bootcamp.bryanproject.Music.Sound;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Bryan;
 import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
+import org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC;
 import org.academiadecodigo.bootcamp.bryanproject.entity.npc.Ogre;
 import org.academiadecodigo.bootcamp.bryanproject.game.Game;
+import org.academiadecodigo.bootcamp.bryanproject.music.Sound;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class OgreWorld extends World {
     public void init() {
         super.addPicture(new Picture(super.getGame().getGrid().getX(),super.getGame().getGrid().getY(), super.getMap().getBackgroudPath()));
         super.getPicture().draw();
+        Sound.music();
         generateEntitys();
         for (Entity entity : entities) {
             if (entity instanceof Bryan) {
@@ -35,7 +37,7 @@ public class OgreWorld extends World {
                         80,getMap().getGround(),this);
             }
         }
-
+        npcLife();
     }
 
     public List<Entity> getEntities() {
@@ -45,6 +47,16 @@ public class OgreWorld extends World {
     private void generateEntitys() {
         entities.add(new Ogre(100, 100));
         entities.add(new Bryan(100, 100));
+    }
+
+    private void npcLife() {
+        for (Entity entity : entities) {
+            if (!entity.isAPlayer() && entity instanceof NPC) {
+                NPC npc = (NPC) entity;
+                System.out.println(npc);
+                npc.start();
+            }
+        }
     }
 
 

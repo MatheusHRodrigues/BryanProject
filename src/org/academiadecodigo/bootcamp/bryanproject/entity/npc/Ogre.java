@@ -1,12 +1,11 @@
 package org.academiadecodigo.bootcamp.bryanproject.entity.npc;
 
 
-import org.academiadecodigo.bootcamp.bryanproject.entity.Entity;
 import org.academiadecodigo.bootcamp.bryanproject.entity.EntityType;
 import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
 import org.academiadecodigo.bootcamp.bryanproject.world.World;
 
-public class Ogre extends Entity {
+public class Ogre extends NPC {
 
     public Ogre(int health, int maxHealth) {
         super(health, maxHealth,EntityType.OGRE);

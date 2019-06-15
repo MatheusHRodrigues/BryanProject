@@ -3,6 +3,7 @@ package org.academiadecodigo.bootcamp.bryanproject.entity;
 public class HealthManage {
     private int health;
     private int healthScale;
+    //CHANCE DE BLOQUEAR ATAQUE E CONSEGUIR ATACAR
 
     public HealthManage(int health, int healthScale) {
         this.health = health;
