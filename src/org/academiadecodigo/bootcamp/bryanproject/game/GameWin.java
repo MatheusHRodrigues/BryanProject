@@ -6,21 +6,18 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import javax.sound.sampled.Clip;
 
-public class GameOver extends Menu {
-
-
+public class GameWin extends Menu {
     private Picture picture;
     private Clip clip;
     private Keyboard keyboard;
 
-
-    public GameOver(Game game) {
+    public GameWin(Game game) {
         super(game);
         init();
     }
 
     public void init() {
-        picture = new Picture(10, 10, "Game/Menu/gameOver.png");
+        picture = new Picture(10, 10, "Game/Menu/winscreen.png");
         clip = getGame().getSound().startMusic();
         keyboard = new Keyboard(this);/*
         KeyboardEvent event7 = new KeyboardEvent();
@@ -31,10 +28,9 @@ public class GameOver extends Menu {
 
     @Override
     public void start() {
-        super.create(picture, clip, keyboard);
+        super.create(picture,clip,keyboard);
     }
 
-    //CRIAR UM EVENT MANAGER
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
 

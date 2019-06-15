@@ -8,20 +8,30 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 import javax.sound.sampled.Clip;
 
 public class MainMenu extends Menu {
+
+    private Picture picture;
+    private Clip clip;
+    private Keyboard keyboard;
+
+
     public MainMenu(Game game) {
         super(game);
-        game.setDisplayable(this);
+        init();
     }
 
-    @Override
-    public void start() {
-        Picture picture = new Picture(10, 10, "Resources/Game/Menu/startMenu.png");
-        Clip clip = getGame().getSound().startMusic();
-        Keyboard keyboard = new Keyboard(this);
+    public void init() {
+        picture = new Picture(10, 10, "Resources/Game/Menu/startMenu.png");
+        clip = getGame().getSound().startMusic();
+        keyboard = new Keyboard(this);
         KeyboardEvent event = new KeyboardEvent();
         event.setKey(KeyboardEvent.KEY_SPACE);
         event.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         keyboard.addEventListener(event);
+    }
+
+    @Override
+    public void start() {
+        getGame().setDisplayable(this);
         super.create(picture, clip, keyboard);
 
     }

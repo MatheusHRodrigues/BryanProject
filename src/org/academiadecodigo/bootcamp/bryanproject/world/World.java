@@ -12,11 +12,14 @@ public abstract class World implements Displayable {
     private Map map;
     private Game game;
     private Picture picture;
+    private WorldEventManager worldEventManager;
     private List<Entity> entities = new ArrayList<>();
 
     protected World(Map map,Game game) {
         this.map = map;
         this.game = game;
+        worldEventManager = new WorldEventManager(this);
+        new Thread(worldEventManager).start();
     }
 
     public Map getMap() {
@@ -37,6 +40,12 @@ public abstract class World implements Displayable {
 
     public List<Entity> getEntities() {
         return entities;
+    }
+
+    public void finish() {
+        map = null;
+        picture = null;
+        entities = null;
     }
 
 }

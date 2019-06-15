@@ -12,7 +12,7 @@ public abstract class NPC extends Entity {
     }
 
     public void start() {
-        AI.Agressive(this);
+       AI.Agressive(this);
     }
 
     public void agressive() {

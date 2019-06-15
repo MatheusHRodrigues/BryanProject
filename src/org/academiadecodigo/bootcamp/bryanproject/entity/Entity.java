@@ -5,7 +5,7 @@ import org.academiadecodigo.bootcamp.bryanproject.world.Ground;
 import org.academiadecodigo.bootcamp.bryanproject.world.World;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-public abstract class Entity {
+public abstract class Entity implements Runnable {
 
     private EntityType entityType;
     private EntityManager entityManager;
@@ -15,7 +15,7 @@ public abstract class Entity {
 
     public Entity(int health, int healthScale, EntityType entityType) {
         this.entityType = entityType;
-        this.healthManage = new HealthManage(health, healthScale);
+        this.healthManage = new HealthManage(health, healthScale,this);
         this.entityManager = new EntityManager(this);
     }
 
@@ -32,35 +32,38 @@ public abstract class Entity {
     }
 
     public void hit(int damage) {
-        this.getEntityManager().getMoves().setMoving(true);
+            this.getEntityManager().getMoves().setMoving(true);
 
-        class Hit implements Runnable {
+            class Hit implements Runnable {
 
-            private Entity entity;
+                private Entity entity;
 
-            public Hit(Entity entity) {
-                this.entity = entity;
-            }
-
-            @Override
-            public void run() {
-                entity.getEntityManager().getMoves().setMovingBlock(true);
-                for (int i = 0; i < 5; i++) {
-                    entityManager.getGraphics().getAnimation().runAnimation(entity, AnimationType.HURT);
-                    try {
-                        Thread.sleep(50);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    //Chance de da Break
+                public Hit(Entity entity) {
+                    this.entity = entity;
                 }
-                entity.getEntityManager().getMoves().setMovingBlock(false);
-                entity.getEntityManager().getMoves().setMoving(false);
+
+                @Override
+                public void run() {
+                    if (!healthManage.isDead()) {
+                    entity.getEntityManager().getMoves().setMovingBlock(true);
+                    for (int i = 0; i < 5; i++) {
+                        entityManager.getGraphics().getAnimation().runAnimation(entity, AnimationType.HURT);
+                        try {
+                            Thread.sleep(50);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        //Chance de da Break
+                    }
+                    entity.getEntityManager().getMoves().setMovingBlock(false);
+                    entity.getEntityManager().getMoves().setMoving(false);
+                    }
+                }
+
             }
 
-        }
-
-        new Thread(new Hit(this)).start();
+            new Thread(new Hit(this)).start();
+            this.healthManage.tryMakeDamage(damage);
 
     }
 
@@ -73,7 +76,29 @@ public abstract class Entity {
     }
 
     public boolean isDead() {
-        return false;
+        return healthManage.isDead();
+    }
+
+    @Override
+    public void run() {
+        while (true) {
+            synchronized (this) {
+                if (healthManage.getHealth() < 1 ) {
+                    healthManage.setDead(true);
+                    for (int i = 0; i < 4; i++) {
+                        entityManager.getGraphics().getAnimation().runAnimation(this, AnimationType.DIE);
+                        System.out.println("ANIMACAO");
+                        try {
+                            Thread.sleep(300);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    break;
+                }
+
+            }
+        }
     }
 
     public EntityManager getEntityManager() {

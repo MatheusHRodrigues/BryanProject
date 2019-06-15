@@ -21,6 +21,7 @@ public class Animation {
 
     public void runAnimation(Entity entity, AnimationType type) {
         String load = path + "Entity/" + entity.getEntityType().getName() + "/" + type.toString().toLowerCase() + "/" + lastDirection.toString().toLowerCase() + fileConcat + tag + ".png";
+        System.out.println(load);
         run(entity, type, load);
     }
 
@@ -49,7 +50,8 @@ public class Animation {
                 while (true) {
                     synchronized (this) {
                         long time = new Date(System.currentTimeMillis()).getTime();
-                        if (animation.getDate().getTime() + 10 < time && !entity.getEntityManager().getMoves().isMoving()) {
+                        if (animation.getDate().getTime() + 10 < time && !entity.getEntityManager().getMoves().isMoving() && !entity.getEntityManager().getMoves().isMovingBlock()) {
+
                             animation.runAnimation(entity, AnimationType.IDLE, animation.getLastDirection());
                             try {
                                 Thread.sleep(100);
