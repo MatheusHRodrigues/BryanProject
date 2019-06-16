@@ -19,7 +19,7 @@ public class GameWin extends Menu {
     public void init() {
         picture = new Picture(10, 10, "Game/Menu/winscreen.png");
         keyboard = new Keyboard(this);
-        audio = new Audio("Game/Music/startsong.wav");/*
+        audio = new Audio("Game/Music/winSong.wav");/*
         KeyboardEvent event7 = new KeyboardEvent();
         event7.setKey(KeyboardEvent.KEY_Q);
         event7.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);

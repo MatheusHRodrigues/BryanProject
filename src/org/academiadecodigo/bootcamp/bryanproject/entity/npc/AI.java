@@ -38,7 +38,7 @@ public class AI {
                                     en.hit(10);
                                 }
                                 try {
-                                    Thread.sleep(300);
+                                    Thread.sleep(150);
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
                                 }
