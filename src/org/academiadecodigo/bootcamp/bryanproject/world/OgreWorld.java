@@ -5,13 +5,14 @@ import org.academiadecodigo.bootcamp.bryanproject.entity.boss.Ogre;
 import org.academiadecodigo.bootcamp.bryanproject.entity.heros.Bryan;
 import org.academiadecodigo.bootcamp.bryanproject.entity.npc.NPC;
 import org.academiadecodigo.bootcamp.bryanproject.game.Game;
+import org.academiadecodigo.bootcamp.bryanproject.music.Audio;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
 public class OgreWorld extends World {
 
     public OgreWorld(Game game) {
-        super(new Map("resources/Game/OgreWorld/map/Background.png", new Ground(928, 85)),game);
+        super(new Map("Game/OgreWorld/map/Background.png", new Ground(928, 85)),game,new Audio("Game/Music/BGsound.wav"));
     }
 
     private void generateEntitys() {
@@ -38,7 +39,6 @@ public class OgreWorld extends World {
         getGame().setDisplayable(this);
         super.addPicture(new Picture(super.getGame().getGrid().getX(),super.getGame().getGrid().getY(), super.getMap().getBackgroudPath()));
         super.getPicture().draw();
-        getGame().getSound().gameMusic();
         generateEntitys();
         for (Entity entity :  super.getEntities()) {
             if (entity instanceof Bryan) {
@@ -51,6 +51,7 @@ public class OgreWorld extends World {
                         80,getMap().getGround(),this);
             }
         }
+        getAudio().runAudio();
         npcLife();
     }
 }

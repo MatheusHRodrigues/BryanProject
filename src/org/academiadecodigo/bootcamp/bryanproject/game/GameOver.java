@@ -1,16 +1,16 @@
 package org.academiadecodigo.bootcamp.bryanproject.game;
 
+import org.academiadecodigo.bootcamp.bryanproject.music.Audio;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-import javax.sound.sampled.Clip;
 
 public class GameOver extends Menu {
 
 
     private Picture picture;
-    private Clip clip;
+    private Audio audio;
     private Keyboard keyboard;
 
 
@@ -21,8 +21,8 @@ public class GameOver extends Menu {
 
     public void init() {
         picture = new Picture(10, 10, "Game/Menu/gameOver.png");
-        clip = getGame().getSound().startMusic();
-        keyboard = new Keyboard(this);/*
+        keyboard = new Keyboard(this);
+        audio = new Audio("Game/Music/gameover.wav");/*
         KeyboardEvent event7 = new KeyboardEvent();
         event7.setKey(KeyboardEvent.KEY_Q);
         event7.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
@@ -31,7 +31,7 @@ public class GameOver extends Menu {
 
     @Override
     public void start() {
-        super.create(picture, clip, keyboard);
+        super.create(picture, audio, keyboard);
     }
 
     //CRIAR UM EVENT MANAGER

@@ -24,14 +24,14 @@ public class WorldEventManager implements Runnable {
                     if (en.isAPlayer() && en.isDead()) {
                         System.out.println("GAME OVER");
                         new GameOver(world.getGame()).start();
-                        clearThreads();
                         world.finish();
+                        clearThreads();
                         break;
                     } else if (en.isDead()) {
                         System.out.println("VENCEUUUUU");
                         new GameWin(world.getGame()).start();
-                        clearThreads();
                         world.finish();
+                        clearThreads();
                         break;
                     }
                 }

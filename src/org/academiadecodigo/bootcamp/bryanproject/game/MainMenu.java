@@ -1,16 +1,15 @@
 package org.academiadecodigo.bootcamp.bryanproject.game;
 
+import org.academiadecodigo.bootcamp.bryanproject.music.Audio;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-import javax.sound.sampled.Clip;
-
 public class MainMenu extends Menu {
 
     private Picture picture;
-    private Clip clip;
+    private Audio audio;
     private Keyboard keyboard;
 
 
@@ -20,9 +19,9 @@ public class MainMenu extends Menu {
     }
 
     public void init() {
-        picture = new Picture(10, 10, "Resources/Game/Menu/startMenu.png");
-        clip = getGame().getSound().startMusic();
+        picture = new Picture(10, 10, "Game/Menu/startMenu.png");
         keyboard = new Keyboard(this);
+        audio = new Audio("Game/Music/startsong.wav");
         KeyboardEvent event = new KeyboardEvent();
         event.setKey(KeyboardEvent.KEY_SPACE);
         event.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
@@ -31,9 +30,7 @@ public class MainMenu extends Menu {
 
     @Override
     public void start() {
-        getGame().setDisplayable(this);
-        super.create(picture, clip, keyboard);
-
+        super.create(picture, audio, keyboard);
     }
 
     @Override
@@ -41,8 +38,8 @@ public class MainMenu extends Menu {
         if (getGame().getDisplayable() instanceof MainMenu) {
             switch (keyboardEvent.getKey()) {
                 case KeyboardEvent.KEY_SPACE:
-                    getGame().getSound().stopMusic(getMusicClip());
                     getGame().init();
+                    getAudio().stopAudio();
                     break;
             }
         }

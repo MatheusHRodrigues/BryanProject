@@ -45,18 +45,18 @@ public abstract class Entity implements Runnable {
                 @Override
                 public void run() {
                     if (!healthManage.isDead()) {
-                    entity.getEntityManager().getMoves().setMovingBlock(true);
-                    for (int i = 0; i < 5; i++) {
-                        entityManager.getGraphics().getAnimation().runAnimation(entity, AnimationType.HURT);
-                        try {
-                            Thread.sleep(50);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        //Chance de da Break
-                    }
-                    entity.getEntityManager().getMoves().setMovingBlock(false);
-                    entity.getEntityManager().getMoves().setMoving(false);
+                            entity.getEntityManager().getMoves().setMovingBlock(true);
+                            for (int i = 0; i < 5; i++) {
+                                entityManager.getGraphics().getAnimation().runAnimation(entity, AnimationType.HURT);
+                                try {
+                                    Thread.sleep(50);
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                                //Chance de da Break
+                            }
+                            entity.getEntityManager().getMoves().setMovingBlock(false);
+                            entity.getEntityManager().getMoves().setMoving(false);
                     }
                 }
 
@@ -87,7 +87,6 @@ public abstract class Entity implements Runnable {
                     healthManage.setDead(true);
                     for (int i = 0; i < 4; i++) {
                         entityManager.getGraphics().getAnimation().runAnimation(this, AnimationType.DIE);
-                        System.out.println("ANIMACAO");
                         try {
                             Thread.sleep(300);
                         } catch (InterruptedException e) {
@@ -118,6 +117,10 @@ public abstract class Entity implements Runnable {
                 ", world = " + world +
                 ", size = " + size +
                 '}';
+    }
+
+    public void remove() {
+        entityManager.getGraphics().getGraphicsRep().delete();
     }
 }
 

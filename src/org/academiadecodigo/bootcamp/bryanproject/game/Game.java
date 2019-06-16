@@ -1,9 +1,9 @@
 package org.academiadecodigo.bootcamp.bryanproject.game;
 
-import org.academiadecodigo.bootcamp.bryanproject.music.Sound;
 import org.academiadecodigo.bootcamp.bryanproject.world.OgreWorld;
 import org.academiadecodigo.bootcamp.bryanproject.world.World;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +13,19 @@ public class Game {
     private Rectangle grid;
     private List<World> worlds = new ArrayList<>();
     private Menu menu;
-    private Sound sound;
     private Displayable displayable;
+    private Picture rectangle2;
 
 
 
     public Game() {
-        sound = new Sound();
         menu = new MainMenu(this);
+        rectangle2 = new Picture(0, 0,"Game/Animations/Entity/Bryan/idle/right-0.png");
+        rectangle2.grow(80,80);
+    }
+
+    public Picture getRectangle2() {
+        return rectangle2;
     }
 
     public void start() {
@@ -38,10 +43,6 @@ public class Game {
 
     public Rectangle getGrid() {
         return grid;
-    }
-
-    public Sound getSound() {
-        return sound;
     }
 
     public Displayable getDisplayable() {

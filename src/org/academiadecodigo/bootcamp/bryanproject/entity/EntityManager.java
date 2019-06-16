@@ -16,7 +16,7 @@ public class EntityManager {
 
     public EntityManager(Entity entity) {
         this.entity = entity;
-        move = new EntityMove(entity,this);
+        move = new EntityMove(entity, this);
     }
 
     public void moveUp(int distance) {
@@ -27,10 +27,6 @@ public class EntityManager {
         logical.setY(logical.getY() + distance);
     }
 
-    public void moveLeft(int distance) {
-        logical.setX(logical.getX() - distance);
-    }
-////////////////////////////////////////////////////////////////////////////////
 
     public Ground getGround() {
         return ground;
@@ -38,21 +34,10 @@ public class EntityManager {
 
     public void init(int x, int y, Ground ground, int size, Picture gRepresentation) {
         this.ground = ground;
-        logical = new EntityLogical(x, y, size * 2, size *2);
-        graphics = new EntityGraphics(this,gRepresentation);
+        logical = new EntityLogical(x, y, size * 2, size * 2);
+        graphics = new EntityGraphics(this, gRepresentation);
         graphics.init(x, y, size, entity);
-        hitBox = new EntityHitBox(x, y, size *2 ,size * 2); //Tem que da grow
-        hitBox.draw();
-
-
-        /*
-        graphicsRep.translate(x, y);
-        graphicsRep.grow(size, size);
-        graphicsRep.draw();
-        hitbox.grow(size, size);
-        hitbox.draw();
-        animation = new Animation();
-        animation.startIdle(this);*/
+        hitBox = new EntityHitBox(x, y, size * 2, size * 2); //Tem que da grow
     }
 
     public Position getLogical() {
